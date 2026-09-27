@@ -18,8 +18,8 @@
  */
 window.AEDES_SUPABASE_CONFIG = {
   // Masukkan Supabase Project URL anda di sini:
-  url: '',
+  url: 'https://kcdhumbrphketzsfqaun.supabase.co',
 
   // Masukkan Supabase Public Anon Key anda di sini:
-  anonKey: ''
+  anonKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtjZGh1bWJycGhrZXR6c2ZxYXVuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTA0OTMzMTgsImV4cCI6MjEwNjA2OTMxOH0.seyX1J8ZVtawpr8NnvFi3ZLH9LifH5SSPXFLyaRuRfM'
 };
