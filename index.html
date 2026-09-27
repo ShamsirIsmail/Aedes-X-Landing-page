@@ -22,11 +22,13 @@
       <img src="assets/aedes-x-logo-horizontal.png" alt="AEDES-X">
     </a>
     <nav class="desktop-nav" aria-label="Navigasi utama">
-      <a href="#system" data-copy="navSystem">Sistem</a>
+      <a href="#problem" data-copy="navProblem">Tujuan</a>
+      <a href="#mechanism" data-copy="navMechanism">Cara Berfungsi</a>
+      <a href="#system" data-copy="navSystem">Teroka Alat</a>
       <a href="#modes" data-copy="navModes">3 Mod</a>
       <a href="#dashboard" data-copy="navDashboard">Papan Pemuka</a>
-      <a href="#compare" data-copy="navCompare">Bandingkan</a>
-      <a href="#validation" data-copy="navValidation">Validasi</a>
+      <a href="#compare" data-copy="navCompare">Keistimewaan</a>
+      <a href="#validation" data-copy="navValidation">Ujian</a>
     </nav>
     <div class="header-actions">
       <span class="national-tag" data-copy="nationalTag">PERINGKAT KEBANGSAAN · 2026</span>
@@ -52,11 +54,13 @@
         <button class="mobile-nav-close" id="navClose" aria-label="Tutup menu">✕</button>
       </div>
       <nav class="mobile-nav-links" aria-label="Navigasi mudah alih">
-        <a href="#system" class="mobile-nav-link" data-copy="navSystem">Sistem</a>
+        <a href="#problem" class="mobile-nav-link" data-copy="navProblem">Tujuan</a>
+        <a href="#mechanism" class="mobile-nav-link" data-copy="navMechanism">Cara Berfungsi</a>
+        <a href="#system" class="mobile-nav-link" data-copy="navSystem">Teroka Alat</a>
         <a href="#modes" class="mobile-nav-link" data-copy="navModes">3 Mod</a>
         <a href="#dashboard" class="mobile-nav-link" data-copy="navDashboard">Papan Pemuka</a>
-        <a href="#compare" class="mobile-nav-link" data-copy="navCompare">Bandingkan</a>
-        <a href="#validation" class="mobile-nav-link" data-copy="navValidation">Validasi</a>
+        <a href="#compare" class="mobile-nav-link" data-copy="navCompare">Keistimewaan</a>
+        <a href="#validation" class="mobile-nav-link" data-copy="navValidation">Ujian</a>
       </nav>
       <div class="mobile-nav-footer">
         <span class="national-tag" data-copy="nationalTag">PERINGKAT KEBANGSAAN · 2026</span>
@@ -73,9 +77,9 @@
         <div class="cinema-loader" id="cinemaLoader"><span></span><b data-copy="loadingExperience">MENYEDIAKAN PENGALAMAN</b></div>
 
         <div class="cinema-copy cinema-intro active" data-beat="0">
-          <p class="eyebrow"><span></span><b>IOT RANGERS · SJKT LADANG RINCHING</b></p>
+          <p class="eyebrow"><span></span><b>01 · KENALI AEDES-X · SJKT LADANG RINCHING</b></p>
           <h1 data-copy="heroTitle">PERLINDUNGAN<br><em>LEBIH PINTAR.</em></h1>
-          <p class="lede" data-copy="heroText">Prototaip perangkap nyamuk pintar yang menggabungkan tarikan CO₂, cahaya UV, aliran udara dan kawalan IoT.</p>
+          <p class="lede" data-copy="heroText">Prototaip perangkap nyamuk pintar yang menggabungkan tarikan CO₂, cahaya UV, aliran udara dan mikropengawal ESP32.</p>
           <div class="hero-stats"><div><strong>03</strong><span data-copy="heroStatModes">mod operasi</span></div><div><strong>02</strong><span data-copy="heroStatControls">kaedah kawalan</span></div><div><strong>05</strong><span data-copy="heroStatStages">peringkat sistem</span></div></div>
         </div>
 
@@ -89,7 +93,7 @@
           <span class="beat-number">03</span><p data-copy="beat3Label">ALIRAN UDARA</p><h2 data-copy="beat3Title">Kipas menarik nyamuk<br>ke ruang tangkapan.</h2>
         </div>
         <div class="cinema-copy cinema-end align-right" data-beat="4">
-          <p data-copy="heroEndLabel">INOVASI STEM · KAWALAN IoT</p><h2>AEDES-X</h2><a class="button primary" href="#system"><span data-copy="exploreSystem">Terokai sistem</span> <b>↘</b></a>
+          <p data-copy="heroEndLabel">INOVASI STEM · KAWALAN IoT</p><h2>AEDES-X</h2><a class="button primary" href="#mechanism"><span data-copy="exploreMechanism">Bagaimana ia berfungsi</span> <b>↘</b></a>
         </div>
         <div class="cinema-progress"><span id="cinemaProgress"></span></div>
         <div class="cinema-scroll-guide" id="cinemaScrollGuide" aria-hidden="true">
@@ -102,7 +106,7 @@
 
     <section class="problem section" id="problem">
       <div class="section-head reveal">
-        <p class="kicker" data-copy="challengeKicker">01 · CABARAN</p>
+        <p class="kicker" data-copy="challengeKicker">02 · KENAPA KAMI BINA AEDES-X?</p>
         <h2 data-copy="problemTitle">Ancaman kecil.<br>Impak yang besar.</h2>
         <p data-copy="problemText">Nyamuk Aedes aktif di persekitaran komuniti. Kami mahu membantu mengurangkan pendedahan melalui satu penyelesaian bebas semburan kimia yang mudah dipantau.</p>
       </div>
@@ -125,9 +129,242 @@
       </div>
     </section>
 
+    <section class="mechanism section" id="mechanism" aria-label="Ikuti Perjalanan Nyamuk - Bagaimana Perangkap Berfungsi">
+      <div class="section-head center reveal">
+        <p class="kicker" data-copy="mechanismKicker">03 · BAGAIMANA PERANGKAP BERFUNGSI?</p>
+        <h2 data-copy="mechanismTitle">Ikuti Perjalanan Nyamuk</h2>
+        <p data-copy="mechanismText">Cerita visual 4 babak bagaimana isyarat CO₂, cahaya UV dan aliran udara berurutan memandu nyamuk ke bakul jaring tanpa racun kimia.</p>
+      </div>
+
+      <div class="story-theater reveal" id="storyTheater" data-active-chapter="1">
+        <!-- Compact Chapter & Playback Controls Bar -->
+        <div class="story-control-bar" role="toolbar" aria-label="Kawalan Babak Perjalanan Nyamuk">
+          <div class="story-chapters-nav" role="tablist" aria-label="Pilih babak cerita">
+            <button class="chapter-btn active" data-chapter="1" role="tab" aria-selected="true" id="chapBtn1">
+              <span class="chap-num">01</span>
+              <span class="chap-title">CO₂</span>
+            </button>
+            <button class="chapter-btn" data-chapter="2" role="tab" aria-selected="false" id="chapBtn2">
+              <span class="chap-num">02</span>
+              <span class="chap-title">UV</span>
+            </button>
+            <button class="chapter-btn" data-chapter="3" role="tab" aria-selected="false" id="chapBtn3">
+              <span class="chap-num">03</span>
+              <span class="chap-title" data-copy="chapFan">Kipas</span>
+            </button>
+            <button class="chapter-btn" data-chapter="4" role="tab" aria-selected="false" id="chapBtn4">
+              <span class="chap-num">04</span>
+              <span class="chap-title" data-copy="chapMesh">Jaring</span>
+            </button>
+          </div>
+
+          <div class="story-playback-controls">
+            <button class="btn-play-story" id="btnPlayStory" aria-label="Lihat proses perjalanan nyamuk">
+              <span class="play-icon" id="playIcon">▶</span>
+              <span id="playStoryLabel" data-copy="btnPlayStory">Lihat proses</span>
+              <span class="play-progress-pill" id="playProgressPill" aria-hidden="true"><span class="play-progress-fill" id="playProgressFill"></span></span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Atmospheric Storyboard Stage (Schematic Story, NOT Hardware Inspection) -->
+        <div class="storyboard-stage" id="storyboardStage">
+          <!-- Atmospheric night background with subtle ambient glows -->
+          <div class="story-ambient-glow" aria-hidden="true"></div>
+          <div class="story-grid-mesh" aria-hidden="true"></div>
+
+          <!-- Stylized Schematic SVG Storyboard -->
+          <svg class="story-svg-canvas" viewBox="0 0 800 480" preserveAspectRatio="xMidYMid meet" aria-label="Ilustrasi skematik perjalanan nyamuk 4 babak" role="img">
+            <defs>
+              <linearGradient id="co2PlumeGrad" x1="0" y1="1" x2="0" y2="0">
+                <stop offset="0%" stop-color="#4cffaf" stop-opacity="0.85"/>
+                <stop offset="40%" stop-color="#37d8ff" stop-opacity="0.45"/>
+                <stop offset="100%" stop-color="#37d8ff" stop-opacity="0"/>
+              </linearGradient>
+
+              <radialGradient id="uvConeGrad" cx="30%" cy="50%" r="70%">
+                <stop offset="0%" stop-color="#c084fc" stop-opacity="0.75"/>
+                <stop offset="35%" stop-color="#9333ea" stop-opacity="0.35"/>
+                <stop offset="100%" stop-color="#7e22ce" stop-opacity="0"/>
+              </radialGradient>
+
+              <radialGradient id="suctionVortexGrad" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.4"/>
+                <stop offset="60%" stop-color="#0284c7" stop-opacity="0.15"/>
+                <stop offset="100%" stop-color="#0369a1" stop-opacity="0"/>
+              </radialGradient>
+
+              <filter id="storyGlow" x="-20%" y="-20%" width="140%" height="140%">
+                <feGaussianBlur stdDeviation="3" result="blur"/>
+                <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+              </filter>
+            </defs>
+
+            <!-- Schematic Trap Silhouette Outline (Distinct from real device photo) -->
+            <g class="trap-silhouette" opacity="0.85">
+              <line x1="120" y1="440" x2="680" y2="440" stroke="#1c3329" stroke-width="2" stroke-dasharray="6,4"/>
+              
+              <!-- Trap Base Container (Fermentation Chamber - Chapter 1 Focal Zone) -->
+              <rect x="320" y="320" width="160" height="110" rx="14" class="schematic-part part-yeast" id="zoneYeast"/>
+              <path d="M 335 390 Q 400 375 465 390" fill="none" stroke="#2a4d3d" stroke-width="1.5"/>
+              <text x="400" y="415" class="schematic-label" text-anchor="middle">BEKAS PENAPAIAN YIS (CO₂)</text>
+
+              <!-- Trap Mesh Basket Area (Chapter 4 Focal Zone) -->
+              <rect x="340" y="240" width="120" height="70" rx="8" class="schematic-part part-mesh" id="zoneMesh"/>
+              <g class="mesh-pattern" stroke="#4cffaf" stroke-opacity="0.25" stroke-width="0.8">
+                <line x1="340" y1="255" x2="460" y2="255"/>
+                <line x1="340" y1="275" x2="460" y2="275"/>
+                <line x1="340" y1="295" x2="460" y2="295"/>
+                <line x1="365" y1="240" x2="365" y2="310"/>
+                <line x1="400" y1="240" x2="400" y2="310"/>
+                <line x1="435" y1="240" x2="435" y2="310"/>
+              </g>
+              <text x="400" y="280" class="schematic-label mesh-lbl" text-anchor="middle">BAKUL JARING HALUS</text>
+
+              <!-- Intake Funnel & Fan Section (Chapter 3 Focal Zone) -->
+              <path d="M 310 150 L 490 150 L 440 230 L 360 230 Z" class="schematic-part part-funnel" id="zoneFunnel"/>
+              <ellipse cx="400" cy="225" rx="35" ry="6" class="schematic-fan-blades" id="fanBlades"/>
+              <text x="400" y="215" class="schematic-label" text-anchor="middle">KIPAS SEDUTAN 5V</text>
+
+              <!-- Top Hood & Open Chamber with UV Light (Chapter 2 Focal Zone) -->
+              <path d="M 330 90 Q 400 70 470 90 L 490 140 L 310 140 Z" class="schematic-part part-hood" id="zoneHood"/>
+              <rect x="350" y="132" width="100" height="6" rx="3" class="schematic-uv-bar" id="uvBar"/>
+              <text x="400" y="115" class="schematic-label uv-lbl" text-anchor="middle">LED ULTRAUNGU (UV)</text>
+
+              <line x1="315" y1="92" x2="315" y2="148" stroke="#335948" stroke-width="3"/>
+              <line x1="485" y1="92" x2="485" y2="148" stroke="#335948" stroke-width="3"/>
+            </g>
+
+            <!-- CHAPTER 1: Animated Rising CO2 Scent Plume & Micro-Bubbles -->
+            <g class="story-layer layer-co2" id="layerCo2">
+              <ellipse cx="400" cy="385" rx="60" ry="12" fill="#1b4231" opacity="0.6"/>
+              <circle cx="370" cy="382" r="3" class="story-bubble bb1"/>
+              <circle cx="390" cy="378" r="2.5" class="story-bubble bb2"/>
+              <circle cx="415" cy="384" r="3.5" class="story-bubble bb3"/>
+              <circle cx="435" cy="380" r="2" class="story-bubble bb4"/>
+
+              <path d="M 400 370 Q 370 300, 320 220 T 260 110" class="co2-drift-stream ds1"/>
+              <path d="M 400 370 Q 430 300, 480 220 T 540 110" class="co2-drift-stream ds2"/>
+              <path d="M 400 360 Q 390 280, 410 180 T 400 80" class="co2-drift-stream ds3"/>
+
+              <ellipse cx="400" cy="180" rx="90" ry="40" class="co2-scent-ring ring-1"/>
+              <ellipse cx="400" cy="180" rx="150" ry="65" class="co2-scent-ring ring-2"/>
+              <ellipse cx="400" cy="180" rx="210" ry="90" class="co2-scent-ring ring-3"/>
+
+              <g class="story-tag tag-co2" transform="translate(190, 260)">
+                <rect width="130" height="32" rx="16" fill="rgba(6,22,16,0.92)" stroke="#4cffaf" stroke-width="1.2"/>
+                <text x="65" y="20" text-anchor="middle" fill="#4cffaf" font-size="11" font-weight="700">1. Gas CO₂ Terhasil</text>
+              </g>
+            </g>
+
+            <!-- CHAPTER 2: UV Light Glow Cone & Guiding Beams -->
+            <g class="story-layer layer-uv" id="layerUv">
+              <polygon points="400,135 180,80 180,210" fill="url(#uvConeGrad)" class="uv-beam-cone cone-left"/>
+              <polygon points="400,135 620,80 620,210" fill="url(#uvConeGrad)" class="uv-beam-cone cone-right"/>
+              <ellipse cx="400" cy="135" rx="90" ry="30" fill="rgba(192, 132, 252, 0.2)" filter="url(#storyGlow)"/>
+
+              <line x1="640" y1="120" x2="480" y2="135" class="uv-guide-line gl-1"/>
+              <line x1="620" y1="170" x2="475" y2="142" class="uv-guide-line gl-2"/>
+              <line x1="160" y1="120" x2="320" y2="135" class="uv-guide-line gl-3"/>
+
+              <g class="story-tag tag-uv" transform="translate(480, 80)">
+                <rect width="135" height="32" rx="16" fill="rgba(19,10,30,0.92)" stroke="#c084fc" stroke-width="1.2"/>
+                <text x="67" y="20" text-anchor="middle" fill="#c084fc" font-size="11" font-weight="700">2. Isyarat Cahaya UV</text>
+              </g>
+            </g>
+
+            <!-- CHAPTER 3: Suction Airflow Streamlines & Downward Pull -->
+            <g class="story-layer layer-fan" id="layerFan">
+              <ellipse cx="400" cy="190" rx="95" ry="35" fill="url(#suctionVortexGrad)"/>
+
+              <path d="M 280 130 C 330 145, 360 170, 390 220" class="story-air-curve ac1"/>
+              <path d="M 520 130 C 470 145, 440 170, 410 220" class="story-air-curve ac2"/>
+              <path d="M 400 90 L 400 215" class="story-air-curve ac3"/>
+              <path d="M 330 110 C 360 140, 385 175, 395 220" class="story-air-curve ac4"/>
+              <path d="M 470 110 C 440 140, 415 175, 405 220" class="story-air-curve ac5"/>
+
+              <g class="story-tag tag-fan" transform="translate(480, 195)">
+                <rect width="130" height="32" rx="16" fill="rgba(5,20,30,0.92)" stroke="#38bdf8" stroke-width="1.2"/>
+                <text x="65" y="20" text-anchor="middle" fill="#38bdf8" font-size="11" font-weight="700">3. Sedutan Aliran Udara</text>
+              </g>
+            </g>
+
+            <!-- CHAPTER 4: Mesh Basket Retention Highlight -->
+            <g class="story-layer layer-mesh" id="layerMesh">
+              <rect x="336" y="236" width="128" height="78" rx="10" fill="rgba(76, 255, 175, 0.12)" stroke="#4cffaf" stroke-width="2" filter="url(#storyGlow)" class="mesh-capture-glow"/>
+              <path d="M 370 315 L 350 345 M 430 315 L 450 345" stroke="#4cffaf" stroke-width="1.5" stroke-dasharray="3,3" opacity="0.8"/>
+              <text x="400" y="340" fill="#4cffaf" font-size="10" text-anchor="middle" letter-spacing="1">LALUAN UDARA KELUAR · NYAMUK DITAHAN</text>
+
+              <g class="story-tag tag-mesh" transform="translate(180, 340)">
+                <rect width="135" height="32" rx="16" fill="rgba(6,25,18,0.92)" stroke="#4cffaf" stroke-width="1.2"/>
+                <text x="67" y="20" text-anchor="middle" fill="#4cffaf" font-size="11" font-weight="700">4. Tertahan di Jaring</text>
+              </g>
+            </g>
+
+            <!-- ILLUSTRATED MOSQUITO (Moves dynamically to 4 chapter keyframe positions) -->
+            <g class="story-mosquito" id="storyMosquito" transform="translate(640, 110)">
+              <g class="mosquito-body-group">
+                <path d="M 28 8 Q 18 14 0 0" fill="none" stroke="rgba(76, 255, 175, 0.4)" stroke-width="1" stroke-dasharray="2,2" class="mosquito-trail"/>
+                <ellipse cx="-4" cy="-10" rx="3.5" ry="9" fill="rgba(255,255,255,0.7)" transform="rotate(-25 -4 -10)" class="mosquito-wing left"/>
+                <ellipse cx="6" cy="-11" rx="3.5" ry="9" fill="rgba(255,255,255,0.7)" transform="rotate(20 6 -11)" class="mosquito-wing right"/>
+                <ellipse cx="0" cy="4" rx="4" ry="11" fill="#18181b" stroke="#e4e4e7" stroke-width="0.8"/>
+                <line x1="-3" y1="0" x2="3" y2="0" stroke="#ffffff" stroke-width="1"/>
+                <line x1="-3" y1="5" x2="3" y2="5" stroke="#ffffff" stroke-width="1"/>
+                <line x1="-2.5" y1="10" x2="2.5" y2="10" stroke="#ffffff" stroke-width="1"/>
+                <circle cx="0" cy="-6" r="4.2" fill="#27272a"/>
+                <circle cx="0" cy="-11" r="2.8" fill="#09090b"/>
+                <line x1="0" y1="-13" x2="-2" y2="-21" stroke="#a1a1aa" stroke-width="1"/>
+                <path d="M -3 -6 Q -12 -12 -16 -4" fill="none" stroke="#71717a" stroke-width="0.8"/>
+                <path d="M 3 -6 Q 12 -12 16 -4" fill="none" stroke="#71717a" stroke-width="0.8"/>
+                <path d="M -3 -2 Q -15 2 -13 14" fill="none" stroke="#71717a" stroke-width="0.8"/>
+                <path d="M 3 -2 Q 15 2 13 14" fill="none" stroke="#71717a" stroke-width="0.8"/>
+                <circle cx="0" cy="0" r="22" class="mosquito-focus-ring"/>
+              </g>
+            </g>
+          </svg>
+        </div>
+
+        <!-- Dynamic Story Narrative Card (Synchronized with active chapter) -->
+        <div class="story-narrative-card" id="storyNarrativeCard" aria-live="polite">
+          <div class="story-card-header">
+            <span class="story-chapter-badge" id="storyChapBadge">BABAK 01 / 04</span>
+            <span class="story-principle-tag" id="storyPrincipleTag">PRINSIP BIOLOGI · ISYARAT AROMA</span>
+          </div>
+
+          <h3 class="story-card-title" id="storyCardTitle">1. Penapaian Menjana Gas CO₂ Semula Jadi</h3>
+
+          <p class="story-card-text" id="storyCardText">
+            Bancuhan air suam, yis dan gula di bahagian bawah bekas menghasilkan gas karbon dioksida (CO₂) secara berterusan. Gas ini meruap naik ke udara, menyerupai hembusan nafas manusia untuk menarik perhatian nyamuk dari jarak jauh.
+          </p>
+
+          <div class="story-stem-note">
+            <span class="note-bullet">💡</span>
+            <div>
+              <strong id="storyStemHeading">Prinsip Sains:</strong>
+              <span id="storyStemDetail">Nyamuk betina menggunakan reseptor deria bau khusus untuk mengesan kepekatan CO₂ sebagai petunjuk kehadiran mangsa.</span>
+            </div>
+          </div>
+
+          <div class="story-footer-nav">
+            <div class="story-nav-buttons">
+              <button class="story-step-btn" id="storyPrevBtn" aria-label="Babak sebelumnya">
+                <span>←</span> <b data-copy="storyPrev">Sebelumnya</b>
+              </button>
+              <button class="story-step-btn primary" id="storyNextBtn" aria-label="Babak seterusnya">
+                <b data-copy="storyNext">Babak Seterusnya</b> <span>→</span>
+              </button>
+            </div>
+            <p class="story-disclaimer" data-copy="storyDisclaimer">
+              *Ilustrasi mekanisme jangkaan—bukan rakaman makmal atau jaminan tangkapan mutlak.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="system section" id="system" aria-label="X-Ray Explorer dan Anatomi Sistem AEDES-X">
       <div class="section-head center reveal">
-        <p class="kicker" data-copy="systemKicker">02 · CARA BERFUNGSI</p>
+        <p class="kicker" data-copy="systemKicker">04 · TEROKA AEDES-X</p>
         <h2 data-copy="systemTitle">Satu sistem.<br>Lima peringkat.</h2>
         <p data-copy="systemText">Teroka anatomi fizikal prototaip AEDES-X secara interaktif untuk memahami fungsi setiap komponen STEM sebenar.</p>
       </div>
@@ -363,9 +600,9 @@
 
     <section class="modes section" id="modes">
       <div class="section-head center reveal">
-        <p class="kicker" data-copy="modesKicker">03 · OPERASI FLEKSIBEL</p>
+        <p class="kicker" data-copy="modesKicker">05 · TIGA MOD OPERASI</p>
         <h2 data-copy="modesTitle">Tiga mod. Satu matlamat.</h2>
-        <p data-copy="modesText">Pilih situasi untuk melihat mod yang paling sesuai.</p>
+        <p data-copy="modesText">Pilih situasi untuk melihat mod yang paling sesuai mengikut keperluan.</p>
       </div>
       <div class="mode-console reveal" id="modeStage">
         <div class="mode-rail">
@@ -404,17 +641,22 @@
           </div>
         </div>
       </div>
+      <div class="mode-cta-row reveal">
+        <a href="#dashboard" class="button secondary mode-dash-cta">
+          <span data-copy="seeDashCta">Lihat Demo Papan Pemuka</span> <b>↓</b>
+        </a>
+      </div>
     </section>
 
     <section class="dashboard section" id="dashboard">
       <div class="dashboard-copy reveal">
-        <p class="kicker" data-copy="dashboardKicker">04 · KAWALAN BERSAMBUNG</p>
+        <p class="kicker" data-copy="dashboardKicker">06 · DEMO PAPAN PEMUKA</p>
         <h2 data-copy="dashTitle">Kawalan pada telefon.<br>Butang fizikal sebagai sokongan.</h2>
-        <p data-copy="dashText">Papan pemuka AEDES-X menyatukan status masa nyata, tiga mod operasi, jadual dan maklumat sistem. Jika hotspot terputus, butang fizikal masih boleh menukar mod.</p>
+        <p data-copy="dashText">Papan pemuka AEDES-X menyatukan status masa nyata, tiga mod operasi, waktu mula berjadual dengan pemasa undur, dan maklumat sistem. Jika hotspot terputus, butang fizikal masih boleh menukar mod.</p>
         <div class="upgrade-card">
           <div class="upgrade-icon">↻</div>
-          <div><span data-copy="nationalUpgrade">PENAMBAHBAIKAN PERINGKAT KEBANGSAAN</span><h3 data-copy="maintenance">Peringatan Penyelenggaraan</h3><p data-copy="maintenanceText">Peringatan berjadual untuk semakan jaring, penggantian campuran CO₂ dan pemeriksaan sistem—supaya penjagaan lebih konsisten.</p></div>
-          <strong data-copy="newLabel">BAHARU</strong>
+          <div><span data-copy="nationalUpgrade">PENAMBAHBAIKAN PERINGKAT KEBANGSAAN</span><h3 data-copy="maintenance">Peringatan Penyelenggaraan Pintar</h3><p data-copy="maintenanceText">Status prototaip perisian: Peringatan berjadual untuk semakan bakul jaring, penggantian bancuhan CO₂ dan pemeriksaan sistem—supaya penjagaan lebih konsisten.</p></div>
+          <strong data-copy="newLabel">DIRANCANG</strong>
         </div>
         <div class="control-badges"><span data-copy="badgeDashboard">◉ Papan pemuka</span><span data-copy="badgePhysical">● Butang fizikal</span><span data-copy="badgeHotspot">⌁ Hotspot setempat</span></div>
         <button class="button dashboard-demo-button" id="playTeaser"><span class="play">▶</span><span data-copy="watchDashboard">Tonton demonstrasi papan pemuka</span></button>
@@ -437,66 +679,286 @@
     </section>
 
     <section class="compare section" id="compare">
-      <div class="compare-heading reveal">
-        <div class="section-head">
-          <p class="kicker" data-copy="compareKicker">05 · PERBANDINGAN</p>
-          <h2 data-copy="compareTitle">Bukan sekadar perangkap.<br>Satu sistem pintar.</h2>
-          <p data-copy="compareText">Pilih kaedah sedia ada untuk melihat perbezaan pendekatan, kawalan dan ciri sistem berbanding prototaip AEDES-X.</p>
-        </div>
-        <div class="compare-counter" aria-live="polite"><span id="compareCount">01</span><i></i><b>04</b></div>
+      <div class="section-head center reveal">
+        <p class="kicker" data-copy="compareKicker">07 · APA YANG MENJADIKAN AEDES-X BERBEZA?</p>
+        <h2 data-copy="compareTitle">Bukan sekadar perangkap.<br>Satu sistem pintar.</h2>
+        <p data-copy="compareText">Tiga perbezaan utama yang direka oleh murid untuk perlindungan komuniti yang lebih pintar, selamat dan mudah dipantau.</p>
       </div>
 
-      <div class="compare-lab reveal" id="compareLab">
-        <div class="compare-tabs" role="tablist" aria-label="Kaedah untuk dibandingkan">
-          <button class="compare-tab active" data-compare="0" role="tab" aria-selected="true"><span>01</span><b data-copy="compareFogging">Fogging</b></button>
-          <button class="compare-tab" data-compare="1" role="tab" aria-selected="false"><span>02</span><b data-copy="compareAerosol">Semburan aerosol</b></button>
-          <button class="compare-tab" data-compare="2" role="tab" aria-selected="false"><span>03</span><b data-copy="compareCoil">Lingkaran nyamuk</b></button>
-          <button class="compare-tab" data-compare="3" role="tab" aria-selected="false"><span>04</span><b data-copy="compareUV">Perangkap UV biasa</b></button>
+      <!-- Three Key Differences First for Quick Presentation -->
+      <div class="diff-cards-grid reveal">
+        <article class="diff-card">
+          <div class="diff-card-badge"><span>✦</span> <b data-copy="diff1Tag">TARIKAN BERGANDA</b></div>
+          <h3 data-copy="diff1Title">Gabungan 3 Isyarat Serentak</h3>
+          <p data-copy="diff1Text">Tidak hanya bergantung pada cahaya UV semata-mata; AEDES-X menggabungkan isyarat aroma CO₂ semula jadi, cahaya UV visual, dan sedutan aliran udara dalam satu alat.</p>
+        </article>
+
+        <article class="diff-card featured">
+          <div class="diff-card-badge"><span>◐</span> <b data-copy="diff2Tag">OPERASI PINTAR</b></div>
+          <h3 data-copy="diff2Title">3 Mod Fleksibel Bersepadu</h3>
+          <p data-copy="diff2Text">Boleh dihidupkan secara Manual untuk demonstrasi, Auto LDR mengikut sensor gelap, atau mod Pemasa mengikut jadual rutin seperti awal pagi dan lewat petang.</p>
+        </article>
+
+        <article class="diff-card">
+          <div class="diff-card-badge"><span>⌁</span> <b data-copy="diff3Tag">KAWALAN DUAL</b></div>
+          <h3 data-copy="diff3Title">Papan Pemuka + Butang Fizikal</h3>
+          <p data-copy="diff3Text">Dipantau dan dikawal mudah menerusi papan pemuka telefon pintar tanpa internet luar, disokong butang fizikal pada perumah sekiranya tiada peranti pintar.</p>
+        </article>
+      </div>
+
+      <!-- Expandable Button for Detailed Comparison -->
+      <div class="compare-toggle-wrap reveal">
+        <button class="btn-toggle-compare" id="btnToggleCompare" aria-expanded="false" aria-controls="compareCollapsibleWrapper">
+          <span class="toggle-text" data-copy="btnToggleCompareText">Lihat Perbandingan Terperinci (Fogging, Aerosol, Lingkaran, UV)</span>
+          <span class="toggle-chevron" id="compareToggleIcon">▾</span>
+        </button>
+      </div>
+
+      <!-- Collapsible Detailed Comparison Laboratory -->
+      <div class="compare-collapsible-wrapper" id="compareCollapsibleWrapper">
+        <div class="compare-lab" id="compareLab">
+          <div class="compare-tabs" role="tablist" aria-label="Kaedah untuk dibandingkan">
+            <button class="compare-tab active" data-compare="0" role="tab" aria-selected="true"><span>01</span><b data-copy="compareFogging">Fogging</b></button>
+            <button class="compare-tab" data-compare="1" role="tab" aria-selected="false"><span>02</span><b data-copy="compareAerosol">Semburan aerosol</b></button>
+            <button class="compare-tab" data-compare="2" role="tab" aria-selected="false"><span>03</span><b data-copy="compareCoil">Lingkaran nyamuk</b></button>
+            <button class="compare-tab" data-compare="3" role="tab" aria-selected="false"><span>04</span><b data-copy="compareUV">Perangkap UV biasa</b></button>
+          </div>
+
+          <div class="compare-stage">
+            <article class="compare-product compare-aedes" data-tilt>
+              <div class="compare-product-top"><span data-copy="ourPrototype">PROTOTAIP KAMI</span><b>AEDES-X</b></div>
+              <div class="compare-image"><span class="compare-halo"></span><img src="assets/aedes-x-transparent.png" alt="Prototaip AEDES-X"></div>
+              <p data-copy="aedesApproach">Menggabungkan CO₂, UV, aliran udara, tiga mod operasi dan kawalan IoT dalam satu sistem.</p>
+            </article>
+
+            <div class="compare-versus" aria-hidden="true"><span>A</span><i></i><b>VS</b><i></i><span>B</span></div>
+
+            <article class="compare-product compare-existing" data-tilt>
+              <div class="compare-product-top"><span data-copy="existingMethod">KAEDAH SEDIA ADA</span><b id="compareName">Fogging</b></div>
+              <div class="compare-image"><img id="compareImage" src="assets/compare-fogging.webp" alt="Kaedah fogging"></div>
+              <p id="compareSummary">Rawatan kawasan yang lazimnya dijalankan oleh petugas terlatih pada masa tertentu.</p>
+            </article>
+          </div>
+
+          <div class="compare-readout">
+            <div class="compare-note"><span data-copy="comparisonLens">LENSA PERBANDINGAN</span><h3 id="compareHeadline">Kawalan pintar berbanding rawatan berkala</h3><p id="compareDetail">AEDES-X direka untuk operasi setempat yang boleh dipantau, manakala fogging ialah rawatan kawasan pada masa tertentu.</p></div>
+            <div class="compare-matrix" id="compareMatrix" aria-live="polite"></div>
+          </div>
+          <p class="compare-disclaimer" data-copy="compareDisclaimer">Perbandingan ini menerangkan ciri dan cara penggunaan umum—bukan keputusan ujian keberkesanan, tuntutan klinikal atau pengganti langkah pencegahan denggi rasmi seperti pemusnahan tempat pembiakan atau semburan berkuasa.</p>
         </div>
-
-        <div class="compare-stage">
-          <article class="compare-product compare-aedes" data-tilt>
-            <div class="compare-product-top"><span data-copy="ourPrototype">PROTOTAIP KAMI</span><b>AEDES-X</b></div>
-            <div class="compare-image"><span class="compare-halo"></span><img src="assets/aedes-x-transparent.png" alt="Prototaip AEDES-X"></div>
-            <p data-copy="aedesApproach">Menggabungkan CO₂, UV, aliran udara, tiga mod operasi dan kawalan IoT dalam satu sistem.</p>
-          </article>
-
-          <div class="compare-versus" aria-hidden="true"><span>A</span><i></i><b>VS</b><i></i><span>B</span></div>
-
-          <article class="compare-product compare-existing" data-tilt>
-            <div class="compare-product-top"><span data-copy="existingMethod">KAEDAH SEDIA ADA</span><b id="compareName">Fogging</b></div>
-            <div class="compare-image"><img id="compareImage" src="assets/compare-fogging.webp" alt="Kaedah fogging"></div>
-            <p id="compareSummary">Rawatan kawasan yang lazimnya dijalankan oleh petugas terlatih pada masa tertentu.</p>
-          </article>
-        </div>
-
-        <div class="compare-readout">
-          <div class="compare-note"><span data-copy="comparisonLens">LENSA PERBANDINGAN</span><h3 id="compareHeadline">Kawalan pintar berbanding rawatan berkala</h3><p id="compareDetail">AEDES-X direka untuk operasi setempat yang boleh dipantau, manakala fogging ialah rawatan kawasan pada masa tertentu.</p></div>
-          <div class="compare-matrix" id="compareMatrix" aria-live="polite"></div>
-        </div>
-        <p class="compare-disclaimer" data-copy="compareDisclaimer">Perbandingan ini menerangkan ciri dan cara penggunaan umum—bukan keputusan ujian keberkesanan, tuntutan klinikal atau pengganti langkah pencegahan denggi rasmi.</p>
       </div>
     </section>
 
     <section class="validation section" id="validation">
-      <div class="section-head reveal">
-        <p class="kicker" data-copy="validationKicker">06 · VALIDASI AWAL</p>
-        <h2 data-copy="validationTitle">Telus tentang apa<br>yang telah diuji.</h2>
-        <p data-copy="validationText">Angka di bawah ialah data sementara untuk demonstrasi laman. Ia mesti diganti dengan keputusan sebenar selepas ujian 10 kali pada 29 September 2026.</p>
-        <div class="data-note"><i>!</i><span data-copy="dataNote"><b>Bukan keputusan rasmi.</b> Jangan gunakan angka ini sebagai bukti pertandingan sebelum ujian sebenar selesai.</span></div>
+      <div class="val-header reveal">
+        <p class="kicker" data-copy="validationKicker">08 · UJIAN &amp; PENAMBAHBAIKAN</p>
+        <h2 class="val-title" data-copy="validationTitle">Apa yang sudah kami uji?</h2>
+        <p class="val-subtitle" data-copy="validationText">Pemisahan telus antara fungsi yang telah disahkan pada prototaip fizikal, ujian berjadual, dan perancangan masa depan tanpa sebarang angka rekaan.</p>
       </div>
-      <div class="metric-grid">
-        <article class="metric reveal"><div class="metric-top"><span data-copy="metricLabel1">Papan pemuka</span><b>10/10*</b></div><h3>8.4s</h3><p data-copy="metric1">Contoh median sambungan; semua contoh di bawah 30 saat.</p><div class="bar"><i style="--w:82%"></i></div></article>
-        <article class="metric reveal"><div class="metric-top"><span data-copy="metricLabel2">Pertukaran 3 mod</span><b>10/10*</b></div><h3>0.8s</h3><p data-copy="metric2">Contoh masa tindak balas selepas arahan mod.</p><div class="bar"><i style="--w:92%"></i></div></article>
-        <article class="metric reveal"><div class="metric-top"><span data-copy="metricLabel3">Tindak balas LDR</span><b>10/10*</b></div><h3>1.2s</h3><p data-copy="metric3">Contoh tindak balas apabila keadaan cahaya berubah.</p><div class="bar"><i style="--w:88%"></i></div></article>
-        <article class="metric reveal"><div class="metric-top"><span data-copy="metricLabel4">Butang tanpa talian</span><b>10/10*</b></div><h3>0.6s</h3><p data-copy="metric4">Contoh operasi butang fizikal tanpa hotspot.</p><div class="bar"><i style="--w:94%"></i></div></article>
-        <article class="metric pending reveal"><div class="metric-top"><span data-copy="metricLabel5">Operasi berterusan</span><b data-copy="notTested">BELUM DIUJI</b></div><h3>—</h3><p data-copy="metric5">Belum diuji sehingga isu haba ESP32 dinilai dengan selamat.</p><div class="bar"><i style="--w:12%"></i></div></article>
+
+      <div class="val-layout-grid reveal" id="valGrid">
+        <!-- Card 1: Sudah ditunjukkan pada prototaip -->
+        <article class="val-summary-card verified" data-card="1">
+          <div class="val-card-top">
+            <span class="val-status-pill verified">✓ <b data-copy="valBadgeVerified">SUDAH DITUNJUKKAN PADA PROTOTAIP</b></span>
+            <span class="val-count-badge" data-copy="valCountVerified">3 FUNGSI UTAMA</span>
+          </div>
+          <h3 class="val-card-title" data-copy="valGroup1Title">Fungsi Telah Disahkan</h3>
+          <ul class="val-brief-points">
+            <li>
+              <span class="val-point-icon check">✓</span>
+              <span data-copy="val1Brief1">Kawalan Pintar ESP32 (Hotspot Web tanpa internet)</span>
+            </li>
+            <li>
+              <span class="val-point-icon check">✓</span>
+              <span data-copy="val1Brief2">Pertukaran 3 mod &amp; paparan skrin OLED</span>
+            </li>
+            <li>
+              <span class="val-point-icon check">✓</span>
+              <span data-copy="val1Brief3">Penjanaan gas CO₂ berterusan daripada penapaian yis</span>
+            </li>
+          </ul>
+          <button class="val-toggle-btn" data-target="1" aria-expanded="false" aria-controls="valDrawer1">
+            <span class="val-btn-text" data-copy="valToggleDetails">Lihat butiran</span>
+            <span class="val-btn-arrow">▾</span>
+          </button>
+        </article>
+
+        <!-- Drawer 1 -->
+        <div class="val-drawer" id="valDrawer1" data-drawer="1" aria-hidden="true">
+          <div class="val-drawer-inner verified-drawer">
+            <div class="val-drawer-top">
+              <div class="val-drawer-badge-wrap">
+                <span class="val-status-pill verified">✓ <b data-copy="valBadgeVerified">SUDAH DITUNJUKKAN PADA PROTOTAIP</b></span>
+                <span class="val-drawer-heading" data-copy="valD1Heading">Butiran Pengesahan Prototaip</span>
+              </div>
+              <button class="val-drawer-close" data-close="1" aria-label="Tutup butiran">✕ <span data-copy="valClose">Tutup</span></button>
+            </div>
+            <div class="val-drawer-grid">
+              <div class="val-detail-box">
+                <div class="val-box-head">
+                  <span class="val-box-num">01</span>
+                  <strong data-copy="val1D1Title">Hotspot Web ESP32 Tempatan</strong>
+                </div>
+                <p data-copy="val1D1Desc">ESP32 memancarkan WiFi AP setempat membolehkan telefon pintar berhubung terus ke antaramuka kawalan tanpa talian internet atau router luar.</p>
+              </div>
+              <div class="val-detail-box">
+                <div class="val-box-head">
+                  <span class="val-box-num">02</span>
+                  <strong data-copy="val1D2Title">Maklum Balas OLED &amp; Butang Fizikal</strong>
+                </div>
+                <p data-copy="val1D2Desc">Pertukaran mod memaparkan teks status masa nyata pada skrin OLED 0.96″, disokong butang fizikal pada perumah sekiranya telefon kehabisan bateri.</p>
+              </div>
+              <div class="val-detail-box">
+                <div class="val-box-head">
+                  <span class="val-box-num">03</span>
+                  <strong data-copy="val1D3Title">Penjanaan CO₂ Semula Jadi &amp; Kuasa 5V</strong>
+                </div>
+                <p data-copy="val1D3Desc">Bancuhan yis, gula dan air suam terbukti mengeluarkan buih gas karbon dioksida berterusan, manakala sistem litar 5V membekalkan arus stabil.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: Ujian seterusnya -->
+        <article class="val-summary-card planned" data-card="2">
+          <div class="val-card-top">
+            <span class="val-status-pill planned">⏱ <b data-copy="valBadgePlanned">UJIAN SETERUSNYA</b></span>
+            <span class="val-count-badge" data-copy="valCountPlanned">3 PROTOKOL</span>
+          </div>
+          <h3 class="val-card-title" data-copy="valGroup2Title">Protokol Ujian Berjadual</h3>
+          <ul class="val-brief-points">
+            <li>
+              <span class="val-point-icon clock">⏱</span>
+              <span data-copy="val2Brief1">Ujian ketepatan masa mod Pemasa (10 kitaran ulangan)</span>
+            </li>
+            <li>
+              <span class="val-point-icon clock">⏱</span>
+              <span data-copy="val2Brief2">Pemantauan kestabilan haba ESP32 (4 jam operasi)</span>
+            </li>
+            <li>
+              <span class="val-point-icon clock">⏱</span>
+              <span data-copy="val2Brief3">Kalibrasi bacaan ambang cahaya sensor LDR</span>
+            </li>
+          </ul>
+          <button class="val-toggle-btn" data-target="2" aria-expanded="false" aria-controls="valDrawer2">
+            <span class="val-btn-text" data-copy="valToggleDetails">Lihat butiran</span>
+            <span class="val-btn-arrow">▾</span>
+          </button>
+        </article>
+
+        <!-- Drawer 2 -->
+        <div class="val-drawer" id="valDrawer2" data-drawer="2" aria-hidden="true">
+          <div class="val-drawer-inner planned-drawer">
+            <div class="val-drawer-top">
+              <div class="val-drawer-badge-wrap">
+                <span class="val-status-pill planned">⏱ <b data-copy="valBadgePlanned">UJIAN SETERUSNYA</b></span>
+                <span class="val-drawer-heading" data-copy="valD2Heading">Protokol &amp; Kaedah Pengujian</span>
+              </div>
+              <button class="val-drawer-close" data-close="2" aria-label="Tutup butiran">✕ <span data-copy="valClose">Tutup</span></button>
+            </div>
+            <div class="val-drawer-grid">
+              <div class="val-detail-box">
+                <div class="val-box-head">
+                  <span class="val-box-num">01</span>
+                  <strong data-copy="val2D1Title">Ujian Kitaran Berjadual 10 Ulangan</strong>
+                </div>
+                <p data-copy="val2D1Desc">Menguji ketepatan pemasaan dalaman ESP32 dan kestabilan pensuisan geganti kipas/UV selama 10 kitaran hidup-henti berturut-turut.</p>
+              </div>
+              <div class="val-detail-box">
+                <div class="val-box-head">
+                  <span class="val-box-num">02</span>
+                  <strong data-copy="val2D2Title">Pemantauan Suhu Komponen (4 Jam)</strong>
+                </div>
+                <p data-copy="val2D2Desc">Memantau bacaan suhu permukaan modul mikropengawal ESP32 semasa 4 jam operasi berterusan untuk keselamatan elektrik perkakasan.</p>
+              </div>
+              <div class="val-detail-box">
+                <div class="val-box-head">
+                  <span class="val-box-num">03</span>
+                  <strong data-copy="val2D3Title">Kalibrasi Ambang Cahaya LDR</strong>
+                </div>
+                <p data-copy="val2D3Desc">Mengukur ambang nilai analog rintangan sensor LDR merentasi persekitaran dalam bilik, beranda dan bawah naungan luar.</p>
+              </div>
+            </div>
+            <div class="val-integrity-banner">
+              <span class="val-integrity-icon">🛡️</span>
+              <p data-copy="valIntegrityText"><b>Prinsip Ketelusan:</b> Kami tidak mereka-reka angka tangkapan nyamuk. Pengesahan kadar tangkapan sebenar memerlukan kajian makmal terkawal entomologi atau kerjasama pihak berkuasa kesihatan.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: Penambahbaikan -->
+        <article class="val-summary-card roadmap" data-card="3">
+          <div class="val-card-top">
+            <span class="val-status-pill roadmap">↻ <b data-copy="valBadgeRoadmap">PENAMBAHBAIKAN</b></span>
+            <span class="val-count-badge" data-copy="valCountRoadmap">3 FASA</span>
+          </div>
+          <h3 class="val-card-title" data-copy="valGroup3Title">Pelan Kemajuan</h3>
+          <ul class="val-brief-points">
+            <li>
+              <span class="val-point-icon arrow">↻</span>
+              <span data-copy="val3Brief1">Peringatan penyelenggaraan pintar pada papan pemuka</span>
+            </li>
+            <li>
+              <span class="val-point-icon arrow">↻</span>
+              <span data-copy="val3Brief2">Liang pengudaraan haba pasif &amp; sinki haba</span>
+            </li>
+            <li>
+              <span class="val-point-icon arrow">↻</span>
+              <span data-copy="val3Brief3">Eksperimen sensor pengira nyamuk inframerah (IR)</span>
+            </li>
+          </ul>
+          <button class="val-toggle-btn" data-target="3" aria-expanded="false" aria-controls="valDrawer3">
+            <span class="val-btn-text" data-copy="valToggleDetails">Lihat butiran</span>
+            <span class="val-btn-arrow">▾</span>
+          </button>
+        </article>
+
+        <!-- Drawer 3 -->
+        <div class="val-drawer" id="valDrawer3" data-drawer="3" aria-hidden="true">
+          <div class="val-drawer-inner roadmap-drawer">
+            <div class="val-drawer-top">
+              <div class="val-drawer-badge-wrap">
+                <span class="val-status-pill roadmap">↻ <b data-copy="valBadgeRoadmap">PENAMBAHBAIKAN</b></span>
+                <span class="val-drawer-heading" data-copy="valD3Heading">Pelan Kemajuan Fasa Seterusnya</span>
+              </div>
+              <button class="val-drawer-close" data-close="3" aria-label="Tutup butiran">✕ <span data-copy="valClose">Tutup</span></button>
+            </div>
+            <div class="val-drawer-grid">
+              <div class="val-detail-box">
+                <div class="val-box-head">
+                  <span class="val-box-num">01</span>
+                  <strong data-copy="val3D1Title">Peringatan Penyelenggaraan Pintar</strong>
+                </div>
+                <p data-copy="val3D1Desc">Notifikasi perisian papan pemuka bagi menjadualkan pembersihan bakul jaring setiap minggu dan penggantian bancuhan yis CO₂ setiap 14 hari.</p>
+              </div>
+              <div class="val-detail-box">
+                <div class="val-box-head">
+                  <span class="val-box-num">02</span>
+                  <strong data-copy="val3D2Title">Liang Pengudaraan Haba &amp; Sinki Haba</strong>
+                </div>
+                <p data-copy="val3D2Desc">Menambah sinki haba aluminium mini serta liang udara reka bentuk sarang lebah pada bahagian atas perumah untuk peredaran haba pasif.</p>
+              </div>
+              <div class="val-detail-box">
+                <div class="val-box-head">
+                  <span class="val-box-num">03</span>
+                  <strong data-copy="val3D3Title">Eksperimen Sensor Pengira IR Mikro</strong>
+                </div>
+                <p data-copy="val3D3Desc">Meneroka sensor celah inframerah mikro di corong sedutan untuk merekodkan anggaran bilangan serangga yang melepasi ruang tangkapan.</p>
+              </div>
+            </div>
+            <div class="val-roadmap-banner">
+              <span class="val-roadmap-icon">📌</span>
+              <p data-copy="valRoadmapNote">Ciri-ciri ini telah dirangka dalam prototaip perisian papan pemuka dan akan disepadukan ke dalam perkakasan fizikal versi seterusnya selepas penilaian juri peringkat kebangsaan.</p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="impact section">
+    <section class="impact section" id="impact">
       <div class="impact-copy reveal">
-        <p class="kicker" data-copy="impactKicker">07 · INOVASI BERTERASKAN TUJUAN</p>
+        <p class="kicker" data-copy="impactKicker">09 · PENUTUP & IMPAK KOMUNITI</p>
         <h2 data-copy="impactTitle">Teknologi yang bermula<br>dengan komuniti.</h2>
         <p data-copy="impactText">AEDES-X menghubungkan pembelajaran STEM dengan isu kesihatan sebenar—daripada idea, prototaip dan pengaturcaraan kepada pengujian yang bertanggungjawab.</p>
       </div>
@@ -506,7 +968,7 @@
       </div>
     </section>
 
-    <section class="finale section">
+    <section class="finale section" id="finale">
       <div class="finale-bg"></div>
       <div class="finale-product reveal"><img src="assets/aedes-x-transparent.png" alt="Pandangan akhir produk AEDES-X"></div>
       <div class="finale-copy reveal">
