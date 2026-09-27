@@ -3278,87 +3278,8 @@ h1, h2, h3, h4 {
 }
 
 /* =====================================================================
-   FINALE & FOOTER
+   FOOTER
 ===================================================================== */
-.finale {
-  min-height: 90vh;
-  position: relative;
-  display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
-  align-items: center;
-  gap: 5vw;
-  overflow: hidden;
-  background: #020705;
-}
-
-.finale-bg {
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(circle at 75% 50%, rgba(76, 255, 175, 0.22), transparent 45%),
-    radial-gradient(circle at 25% 70%, rgba(55, 216, 255, 0.14), transparent 50%);
-  pointer-events: none;
-}
-
-.finale-product {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  justify-content: center;
-}
-
-.finale-product img {
-  max-width: min(520px, 85%);
-  max-height: 72vh;
-  object-fit: contain;
-  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.65));
-}
-
-.finale-copy {
-  position: relative;
-  z-index: 1;
-}
-
-.finale-copy .kicker {
-  color: var(--cyan);
-}
-
-.finale-copy h2 {
-  font-size: clamp(4.5rem, 9.5vw, 9.5rem);
-  letter-spacing: -0.07em;
-  line-height: 0.88;
-  margin: 8px 0 16px;
-}
-
-.finale-copy p {
-  color: #9cb0a8;
-  font-size: 1.1rem;
-}
-
-.school-lockup {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  margin-top: 36px;
-}
-
-.school-lockup img {
-  width: 54px;
-  height: 64px;
-  object-fit: contain;
-}
-
-.school-lockup b {
-  display: block;
-  font-size: 0.92rem;
-  letter-spacing: 0.03em;
-}
-
-.school-lockup span {
-  font-size: 0.68rem;
-  letter-spacing: 0.14em;
-  color: var(--green);
-}
 
 footer {
   height: 90px;
@@ -4112,24 +4033,7 @@ dialog video {
     line-height: 1.5;
     margin-top: 4px;
   }
-
-  /* Finale & Footer on mobile */
-  .finale {
-    min-height: auto;
-    padding: 80px 20px 40px;
-  }
-
-  .finale-copy h2 {
-    font-size: clamp(3.6rem, 16vw, 6.2rem);
-  }
-
-  .finale-product img {
-    max-height: 45vh;
-  }
-
-  .school-lockup {
-    margin-top: 28px;
-  }
+  /* Footer on mobile */
 
   footer {
     height: auto;
