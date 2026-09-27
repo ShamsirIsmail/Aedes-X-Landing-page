@@ -25,6 +25,86 @@ const MIME_TYPES = {
 
 const server = http.createServer((req, res) => {
   const urlPath = req.url.split('?')[0];
+
+  // API endpoints for feedback moderation queue
+  if (urlPath === '/api/feedback') {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+
+    if (req.method === 'OPTIONS') {
+      res.writeHead(204);
+      res.end();
+      return;
+    }
+
+    if (req.method === 'GET') {
+      const dataFile = path.join(ROOT, 'feedback-data.json');
+      fs.readFile(dataFile, 'utf8', (err, data) => {
+        if (err) {
+          res.writeHead(200, { 'Content-Type': 'application/json' });
+          res.end('[]');
+          return;
+        }
+        res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8' });
+        res.end(data);
+      });
+      return;
+    }
+
+    if (req.method === 'POST') {
+      let body = '';
+      req.on('data', chunk => {
+        body += chunk;
+        if (body.length > 5 * 1024 * 1024) { // 5MB limit
+          res.writeHead(413, { 'Content-Type': 'application/json' });
+          res.end(JSON.stringify({ error: 'Payload too large' }));
+          req.destroy();
+        }
+      });
+
+      req.on('end', () => {
+        try {
+          const submission = JSON.parse(body);
+          if (!submission.opinion || !submission.feedback) {
+            res.writeHead(400, { 'Content-Type': 'application/json' });
+            res.end(JSON.stringify({ error: 'Missing required fields' }));
+            return;
+          }
+
+          const queueFile = path.join(ROOT, 'feedback-submissions.json');
+          let queue = [];
+          if (fs.existsSync(queueFile)) {
+            try { queue = JSON.parse(fs.readFileSync(queueFile, 'utf8')); } catch (e) { queue = []; }
+          }
+
+          const newEntry = {
+            id: 'sub-' + Date.now(),
+            date: new Date().toISOString(),
+            formattedDate: new Date().toLocaleDateString('ms-MY', { day: 'numeric', month: 'short', year: 'numeric' }),
+            opinion: String(submission.opinion).slice(0, 30),
+            feedback: String(submission.feedback).slice(0, 1000),
+            name: submission.name ? String(submission.name).slice(0, 80) : 'Pelawat Web',
+            hasAvatar: Boolean(submission.avatar),
+            avatarData: submission.avatar ? String(submission.avatar).slice(0, 3 * 1024 * 1024) : null,
+            isPublic: Boolean(submission.isPublic),
+            status: 'pending_review'
+          };
+
+          queue.unshift(newEntry);
+          fs.writeFileSync(queueFile, JSON.stringify(queue, null, 2));
+
+          res.writeHead(201, { 'Content-Type': 'application/json' });
+          res.end(JSON.stringify({ success: true, id: newEntry.id, isPublic: newEntry.isPublic }));
+        } catch (e) {
+          res.writeHead(400, { 'Content-Type': 'application/json' });
+          res.end(JSON.stringify({ error: 'Invalid JSON' }));
+        }
+      });
+      return;
+    }
+  }
+
   let safePath = path.normalize(decodeURIComponent(urlPath)).replace(/^(\.\.[\/\\])+/, '');
   if (safePath === '/' || safePath === '\\') {
     safePath = '/index.html';

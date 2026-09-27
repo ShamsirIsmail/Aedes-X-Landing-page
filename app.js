@@ -12,8 +12,12 @@ const translations = {
     navProblem:'Tujuan', navMechanism:'Cara Berfungsi', navSystem:'Teroka Alat', navModes:'3 Mod', navDashboard:'Papan Pemuka', navCompare:'Keistimewaan', navValidation:'Ujian', nationalTag:'PERINGKAT KEBANGSAAN · 2026',
     loadingExperience:'MENYEDIAKAN PENGALAMAN', heroTitle:'PERLINDUNGAN<br><em>LEBIH PINTAR.</em>', heroText:'Prototaip perangkap nyamuk pintar yang menggabungkan tarikan CO₂, cahaya UV, aliran udara dan mikropengawal ESP32.',
     heroStatModes:'mod operasi', heroStatControls:'kaedah kawalan', heroStatStages:'peringkat sistem', beat1Label:'ISYARAT TARIKAN', beat1Title:'Nyamuk mengesan<br>isyarat CO₂.', beat2Label:'TARIKAN TAMBAHAN', beat2Title:'Cahaya UV<br>memandu laluan.', beat3Label:'ALIRAN UDARA', beat3Title:'Kipas menarik nyamuk<br>ke ruang tangkapan.', heroEndLabel:'INOVASI STEM · KAWALAN IoT', exploreMechanism:'Bagaimana ia berfungsi', scrollGuide:'SKROL UNTUK MENGGERAKKAN CERITA',
-    challengeKicker:'02 · KENAPA KAMI BINA AEDES-X?', problemTitle:'Ancaman kecil.<br>Impak yang besar.', problemText:'Nyamuk Aedes aktif di persekitaran komuniti. Kami mahu membantu mengurangkan pendedahan melalui satu penyelesaian bebas semburan kimia yang mudah dipantau.',
+    challengeKicker:'02 · KENAPA KAMI BINA AEDES-X?', challengeConcept:'Tiga situasi, satu sebab kami bertindak', problemTitle:'Ancaman kecil.<br>Impak yang besar.', problemText:'Nyamuk Aedes aktif di persekitaran komuniti. Kami mahu membantu mengurangkan pendedahan melalui satu penyelesaian bebas semburan kimia yang mudah dipantau.',
     challenge1Title:'Aktif di ruang harian', challenge1Text:'Nyamuk Aedes boleh berada berhampiran ruang kediaman, sekolah dan kawasan aktiviti komuniti.', challenge2Title:'Punca mudah terlepas pandang', challenge2Text:'Takungan air kecil dan kawasan terlindung memerlukan pemeriksaan yang teliti serta berulang.', challenge3Title:'Pencegahan perlu konsisten', challenge3Text:'Pemantauan manual sahaja sukar dikekalkan. Komuniti memerlukan tindakan yang lebih mudah dan teratur.',
+    story1Tag:'SITUASI 01 · RUANG HARIAN', story2Tag:'SITUASI 02 · TAKUNGAN AIR', story3Tag:'SITUASI 03 · KONSISTENSI',
+    step1Short:'Ruang Harian', step2Short:'Air Bertakung', step3Short:'Konsistensi',
+    storySelectHint:'Pilih situasi ini', storyPresenterHint:'Gunakan anak panah papan kekunci, klik kad sisi, atau leret untuk beralih cerita.',
+    leadoutTag:'KESIMPULAN INISIATIF', reasonTransition:'“Sebab itu kami membina AEDES-X.”', leadoutSub:'Satu inovasi STEM berasaskan tarikan pelbagai isyarat dan kawalan IoT untuk melindungi komuniti secara pintar tanpa semburan racun kimia.', leadoutNextText:'Ketahui bagaimana AEDES-X bertindak',
     mechanismKicker:'03 · BAGAIMANA PERANGKAP BERFUNGSI?', mechanismTitle:'Ikuti Perjalanan Nyamuk', mechanismText:'Cerita visual 4 babak bagaimana isyarat CO₂, cahaya UV dan aliran udara berurutan memandu nyamuk ke bakul jaring tanpa racun kimia.',
     chapFan:'Kipas', chapMesh:'Jaring', btnPlayStory:'Lihat proses', btnPauseStory:'Jeda', btnReplayStory:'Ulang proses', storyPrev:'Sebelumnya', storyNext:'Babak Seterusnya', storyDisclaimer:'*Ilustrasi mekanisme jangkaan—bukan rakaman makmal atau jaminan tangkapan mutlak.',
     systemKicker:'04 · TEROKA AEDES-X', systemTitle:'Satu sistem.<br>Lima peringkat.', systemText:'Teroka anatomi fizikal prototaip AEDES-X secara interaktif untuk memahami fungsi setiap komponen STEM sebenar.', missionStatusLabel:'STATUS ANATOMI:', xrayInstruction:'Tekan bahagian alat untuk teroka', fullDeviceBtn:'Peranti Penuh', missionKicker:'KONSOL KAWALAN PERTANDINGAN', missionHeadline:'Anatomi Modular AEDES-X', missionIntro:'Pilih mana-mana satu daripada lima bahagian pada alat atau panel ini untuk meneliti komponen fizikal, gambarajah terperinci dan mekanisme STEM sebenar.', backToFullBtn:'Kembali ke Peranti Penuh', stageAll:'Semua', stage1:'Kuasa & Input', stage1p:'Panel solar, suis utama, butang mod dan sensor LDR.', stage2:'Otak Sistem', stage2p:'ESP32 memproses input dan menyelaras operasi.', stage3:'Tarikan & Aliran', stage3p:'UV LED dan kipas menghasilkan tarikan serta sedutan.', stage4:'Tangkapan', stage4p:'Bakul jaring halus memerangkap nyamuk dengan selamat.', stage5:'Penghasil CO₂', stage5p:'Campuran yis, gula dan air suam menghasilkan isyarat tarikan.',
@@ -65,14 +69,32 @@ const translations = {
     val3D3Title:'Eksperimen Sensor Pengira IR Mikro',
     val3D3Desc:'Meneroka sensor celah inframerah mikro di corong sedutan untuk merekodkan anggaran bilangan serangga yang melepasi ruang tangkapan.',
     valRoadmapNote:'Ciri-ciri ini telah dirangka dalam prototaip perisian papan pemuka dan akan disepadukan ke dalam perkakasan fizikal versi seterusnya selepas penilaian juri peringkat kebangsaan.',
-    impactKicker:'09 · PENUTUP & IMPAK KOMUNITI', impactTitle:'Teknologi yang bermula<br>dengan komuniti.', impactText:'AEDES-X menghubungkan pembelajaran STEM dengan isu kesihatan sebenar—daripada idea, prototaip dan pengaturcaraan kepada pengujian yang bertanggungjawab.', sdg3Title:'SDG 3 · KESIHATAN BAIK DAN KESEJAHTERAAN', sdg3:'Menyokong kesedaran dan usaha pencegahan denggi dalam komuniti.', sdg9Title:'SDG 9 · INDUSTRI, INOVASI DAN INFRASTRUKTUR', sdg9:'Menggalakkan inovasi IoT yang dibina, diuji dan diterangkan oleh murid.', finalText:'Inovasi kecil. Impak yang bermakna.', backTop:'Kembali ke atas ↑'
+    impactKicker:'09 · PENUTUP & IMPAK KOMUNITI', impactTitle:'Teknologi yang bermula<br>dengan komuniti.', impactText:'AEDES-X menghubungkan pembelajaran STEM dengan isu kesihatan sebenar—daripada idea, prototaip dan pengaturcaraan kepada pengujian yang bertanggungjawab.', sdg3Title:'SDG 3 · KESIHATAN BAIK DAN KESEJAHTERAAN', sdg3:'Menyokong kesedaran dan usaha pencegahan denggi dalam komuniti.', sdg9Title:'SDG 9 · INDUSTRI, INOVASI DAN INFRASTRUKTUR', sdg9:'Menggalakkan inovasi IoT yang dibina, diuji dan diterangkan oleh murid.', finalText:'Inovasi kecil. Impak yang bermakna.', backTop:'Kembali ke atas ↑',
+    feedbackKicker:'09 / SUARA PELAWAT', feedbackTitle:'Pandangan tentang AEDES-X', feedbackSubtitle:'Maklum balas sebenar membantu kami membina versi yang lebih baik.',
+    btnAddFeedback:'Tambah feedback', feedbackEmptyTitle:'Belum ada maklum balas dipaparkan. Jadilah orang pertama berkongsi pendapat.', feedbackEmptySub:'Pandangan anda tentang prototaip AEDES-X amat berharga untuk murid inovator kami.',
+    feedbackSequenceGuide:'Lihat maklum balas mengikut urutan', mascotAriaLabel:'Lihat maklum balas pelawat', mascotBtnLabel:'Lihat maklum balas', verifiedCardTag:'DISAHKAN · MAKLUM BALAS SEBENAR',
+    formTitle:'Kongsi Maklum Balas Anda', formSubtitle:'Bantu murid inovator IoT Rangers menambah baik prototaip AEDES-X.',
+    q1Label:'1. Apa pendapat anda tentang AEDES-X?', optGreat:'Menarik', optImprove:'Boleh ditambah baik', optRework:'Kurang sesuai',
+    q2Label:'2. Apa yang boleh kami tambah baik?', q2Placeholder:'Tulis pandangan atau cadangan anda di sini (cth: saiz perumah, aplikasi, ketahanan)...',
+    nameLabel:'Nama atau nama panggilan', namePlaceholder:'Contoh: Cikgu Rosli / Pelawat STEM',
+    photoLabel:'Gambar profil', photoUploadBtn:'Pilih Foto', photoRemoveBtn:'Buang', photoHint:'Format PNG, JPG atau WebP (Maksimum 2MB)',
+    consentLabel:'Benarkan nama dan maklum balas saya dipaparkan di laman web (selepas semakan).', consentNotice:'Secara lalai, maklum balas disimpan secara peribadi melainkan anda membenarkannya di atas.',
+    btnSubmit:'Hantar Maklum Balas', btnSubmitting:'Menghantar...',
+    successPublic:'Terima kasih! Maklum balas anda telah diterima dan dihantar ke barisan semakan sebelum dipaparkan.',
+    successPrivate:'Terima kasih! Maklum balas peribadi anda telah selamat dihantar kepada pasukan AEDES-X.',
+    btnDone:'Tutup', errRequired:'Sila pilih pendapat anda dan lengkapkan cadangan penambahbaikan.',
+    errPhotoSize:'Saiz gambar melebihi had 2MB.', errSpam:'Sila tunggu sebentar sebelum menghantar maklum balas baharu.'
   },
   en: {
     navProblem:'Purpose', navMechanism:'How It Works', navSystem:'Explore Anatomy', navModes:'3 Modes', navDashboard:'Dashboard', navCompare:'Differences', navValidation:'Testing', nationalTag:'NATIONAL STAGE · 2026',
     loadingExperience:'PREPARING EXPERIENCE', heroTitle:'SMARTER<br><em>PROTECTION.</em>', heroText:'A smart mosquito-trap prototype combining CO₂ attraction, UV light, airflow and ESP32 microcontroller.',
     heroStatModes:'operating modes', heroStatControls:'control methods', heroStatStages:'system stages', beat1Label:'ATTRACTION SIGNAL', beat1Title:'Mosquitoes detect<br>the CO₂ signal.', beat2Label:'SECONDARY ATTRACTION', beat2Title:'UV light<br>guides the path.', beat3Label:'AIRFLOW', beat3Title:'The fan pulls mosquitoes<br>into the capture chamber.', heroEndLabel:'STEM INNOVATION · IoT CONTROL', exploreMechanism:'How it works', scrollGuide:'SCROLL TO MOVE THE STORY',
-    challengeKicker:'02 · WHY WE BUILT AEDES-X', problemTitle:'A small threat.<br>A major impact.', problemText:'Aedes mosquitoes are active around our communities. We aim to reduce exposure through a chemical-spray-free solution that is easy to monitor.',
+    challengeKicker:'02 · WHY WE BUILT AEDES-X', challengeConcept:'Three situations, one reason we act', problemTitle:'A small threat.<br>A major impact.', problemText:'Aedes mosquitoes are active around our communities. We aim to reduce exposure through a chemical-spray-free solution that is easy to monitor.',
     challenge1Title:'Active in daily spaces', challenge1Text:'Aedes mosquitoes can be present near homes, schools and community activity areas.', challenge2Title:'Sources are easily overlooked', challenge2Text:'Small water collections and sheltered areas require careful, repeated inspection.', challenge3Title:'Prevention must be consistent', challenge3Text:'Manual monitoring alone is difficult to maintain. Communities need action that is simpler and more organised.',
+    story1Tag:'SITUATION 01 · DAILY SPACES', story2Tag:'SITUATION 02 · WATER COLLECTIONS', story3Tag:'SITUATION 03 · CONSISTENCY',
+    step1Short:'Daily Spaces', step2Short:'Standing Water', step3Short:'Consistency',
+    storySelectHint:'Click to select', storyPresenterHint:'Use keyboard arrows, click side cards, or swipe to change story.',
+    leadoutTag:'INITIATIVE CONCLUSION', reasonTransition:'“That is why we built AEDES-X.”', leadoutSub:'A STEM innovation based on multi-signal attraction and IoT control to protect communities smartly without chemical sprays.', leadoutNextText:'Learn how AEDES-X takes action',
     mechanismKicker:'03 · HOW THE TRAP WORKS', mechanismTitle:'Follow the Mosquito’s Journey', mechanismText:'A 4-step visual story showing how sequential CO₂ cues, UV light, and airflow guide mosquitoes into the mesh basket without chemical sprays.',
     chapFan:'Fan', chapMesh:'Mesh', btnPlayStory:'Watch process', btnPauseStory:'Pause', btnReplayStory:'Replay', storyPrev:'Previous', storyNext:'Next Step', storyDisclaimer:'*Illustration of intended mechanism—not laboratory footage or absolute capture guarantee.',
     systemKicker:'04 · EXPLORE AEDES-X', systemTitle:'One system.<br>Five stages.', systemText:'Interactively explore the physical anatomy of the AEDES-X prototype to understand how real STEM components operate.', missionStatusLabel:'ANATOMY STATUS:', xrayInstruction:'Click device parts to explore', fullDeviceBtn:'Full Device', missionKicker:'COMPETITION COMMAND CONSOLE', missionHeadline:'AEDES-X Modular Anatomy', missionIntro:'Select any of the five zones on the prototype or control panel to examine real physical components, detailed diagrams and STEM mechanisms.', backToFullBtn:'Back to Full Device', stageAll:'All', stage1:'Power & Input', stage1p:'Solar panel, main switch, mode button and LDR sensor.', stage2:'System Brain', stage2p:'The ESP32 processes inputs and coordinates operation.', stage3:'Attraction & Airflow', stage3p:'UV LEDs and the fan provide attraction and suction.', stage4:'Capture', stage4p:'A fine-mesh basket securely retains mosquitoes.', stage5:'CO₂ Generator', stage5p:'Yeast, sugar and warm water produce an attraction signal.',
@@ -124,7 +146,21 @@ const translations = {
     val3D3Title:'Micro-IR Counter Experiment',
     val3D3Desc:'Exploring a micro-infrared beam break sensor at the intake funnel to record estimated mosquito entry events.',
     valRoadmapNote:'These features are architected in the dashboard software prototype and will be integrated into the physical hardware after the national competition judging.',
-    impactKicker:'09 · CONCLUSION & STEM IMPACT', impactTitle:'Technology that begins<br>with the community.', impactText:'AEDES-X connects STEM learning with a real health challenge—from ideas, prototyping and programming to responsible testing.', sdg3Title:'SDG 3 · GOOD HEALTH AND WELL-BEING', sdg3:'Supports dengue awareness and prevention efforts in the community.', sdg9Title:'SDG 9 · INDUSTRY, INNOVATION AND INFRASTRUKTUR', sdg9:'Encourages student-built and student-tested IoT innovation.', finalText:'Small innovation. Meaningful impact.', backTop:'Back to top ↑'
+    impactKicker:'09 · CONCLUSION & STEM IMPACT', impactTitle:'Technology that begins<br>with the community.', impactText:'AEDES-X connects STEM learning with a real health challenge—from ideas, prototyping and programming to responsible testing.', sdg3Title:'SDG 3 · GOOD HEALTH AND WELL-BEING', sdg3:'Supports dengue awareness and prevention efforts in the community.', sdg9Title:'SDG 9 · INDUSTRY, INNOVATION AND INFRASTRUKTUR', sdg9:'Encourages student-built and student-tested IoT innovation.', finalText:'Small innovation. Meaningful impact.', backTop:'Back to top ↑',
+    feedbackKicker:'09 / VISITOR VOICE', feedbackTitle:'Thoughts on AEDES-X', feedbackSubtitle:'Real feedback helps us build a better version.',
+    btnAddFeedback:'Add feedback', feedbackEmptyTitle:'No feedback displayed yet. Be the first to share your thoughts.', feedbackEmptySub:'Your thoughts on the AEDES-X prototype are invaluable to our student innovators.',
+    feedbackSequenceGuide:'Browse feedback in sequence', mascotAriaLabel:'View visitor feedback', mascotBtnLabel:'View feedback', verifiedCardTag:'VERIFIED · AUTHENTIC FEEDBACK',
+    formTitle:'Share Your Feedback', formSubtitle:'Help our IoT Rangers student innovators improve the AEDES-X prototype.',
+    q1Label:'1. What is your opinion of AEDES-X?', optGreat:'Great', optImprove:'Can be improved', optRework:'Less suitable',
+    q2Label:'2. What can we improve?', q2Placeholder:'Write your thoughts or suggestions here (e.g., chassis size, app, durability)...',
+    nameLabel:'Name or nickname', namePlaceholder:'Example: Teacher Sarah / STEM Visitor',
+    photoLabel:'Profile photo', photoUploadBtn:'Choose Photo', photoRemoveBtn:'Remove', photoHint:'PNG, JPG or WebP format (Max 2MB)',
+    consentLabel:'Allow my name and feedback to be displayed publicly on this website (after review).', consentNotice:'By default, feedback is kept private unless opted in above.',
+    btnSubmit:'Submit Feedback', btnSubmitting:'Submitting...',
+    successPublic:'Thank you! Your feedback has been received and queued for review before appearing publicly.',
+    successPrivate:'Thank you! Your private feedback has been securely sent to the AEDES-X team.',
+    btnDone:'Close', errRequired:'Please select your opinion and provide a suggestion.',
+    errPhotoSize:'Image size exceeds the 2MB limit.', errSpam:'Please wait a moment before submitting again.'
   }
 };
 
@@ -136,11 +172,23 @@ function applyLanguage(language) {
     const value = translations[language][element.dataset.copy];
     if (value !== undefined) element.innerHTML = value;
   });
+  $$('[data-copy-placeholder]').forEach((element) => {
+    const value = translations[language][element.dataset.copyPlaceholder];
+    if (value !== undefined) element.setAttribute('placeholder', value);
+  });
+  $$('[data-copy-aria]').forEach((element) => {
+    const value = translations[language][element.dataset.copyAria];
+    if (value !== undefined) {
+      element.setAttribute('aria-label', value);
+      element.setAttribute('title', value);
+    }
+  });
   $$('.language-toggle button').forEach((button) => {
     const active = button.dataset.lang === language;
     button.classList.toggle('active', active);
     button.setAttribute('aria-pressed', String(active));
   });
+  renderReasonStory(activeReasonIndex, false);
   renderStoryChapter(activeStoryChapter, false);
   renderXrayStage(activeXrayStage, false);
   renderMode(activeModeIndex, false);
@@ -154,6 +202,9 @@ function applyLanguage(language) {
         : translations[language].valToggleDetails;
     }
   });
+  if (typeof renderFeedbackCards === 'function') {
+    renderFeedbackCards();
+  }
 }
 
 $$('.language-toggle button').forEach((button) => {
@@ -333,7 +384,167 @@ if (!context) {
 }
 
 // =====================================================================
-// SECTION 02 · X-RAY EXPLORER + MISSION CONTROL EXHIBIT CONTROLLER
+// SECTION 02 · INTERACTIVE 3D STORY CAROUSEL CONTROLLER
+// Concept: "Tiga situasi, satu sebab kami bertindak"
+// =====================================================================
+let activeReasonIndex = 0;
+
+function renderReasonStory(index, announce = true) {
+  const cards = $$('.story-card');
+  const stepIndicators = $$('.story-step-indicator');
+  const totalStories = cards.length || 3;
+  if (totalStories === 0) return;
+
+  activeReasonIndex = ((index % totalStories) + totalStories) % totalStories;
+
+  const prevIndex = (activeReasonIndex - 1 + totalStories) % totalStories;
+  const nextIndex = (activeReasonIndex + 1) % totalStories;
+
+  cards.forEach((card) => {
+    const cardIdx = parseInt(card.dataset.storyIndex, 10);
+    card.classList.remove('is-active', 'is-prev', 'is-next');
+
+    if (cardIdx === activeReasonIndex) {
+      card.classList.add('is-active');
+      card.setAttribute('aria-hidden', 'false');
+      card.setAttribute('tabindex', '0');
+    } else if (cardIdx === prevIndex) {
+      card.classList.add('is-prev');
+      card.setAttribute('aria-hidden', 'true');
+      card.setAttribute('tabindex', '0');
+    } else if (cardIdx === nextIndex) {
+      card.classList.add('is-next');
+      card.setAttribute('aria-hidden', 'true');
+      card.setAttribute('tabindex', '0');
+    }
+  });
+
+  // Update progress indicator (01 / 03)
+  const currentCounter = $('#storyCurrentIndex');
+  if (currentCounter) {
+    currentCounter.textContent = String(activeReasonIndex + 1).padStart(2, '0');
+  }
+
+  // Update step indicators
+  stepIndicators.forEach((btn) => {
+    const stepIdx = parseInt(btn.dataset.step, 10);
+    const isActive = stepIdx === activeReasonIndex;
+    btn.classList.toggle('active', isActive);
+    btn.setAttribute('aria-selected', String(isActive));
+  });
+
+  // Highlight concise leadout line when reaching Story 03
+  const leadout = $('#storyLeadout');
+  if (leadout) {
+    leadout.classList.toggle('is-highlighted', activeReasonIndex === 2);
+  }
+}
+
+function initReasonStory() {
+  const container = $('#storyCarouselContainer');
+  const stage = $('#storyCarouselStage');
+  const prevBtn = $('#storyPrevBtn');
+  const nextBtn = $('#storyNextBtn');
+  if (!container || !stage) return;
+
+  // Arrow button navigation
+  if (prevBtn) {
+    prevBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      renderReasonStory(activeReasonIndex - 1);
+    });
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      renderReasonStory(activeReasonIndex + 1);
+    });
+  }
+
+  // Stepper pill clicks
+  $$('.story-step-indicator').forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const step = parseInt(btn.dataset.step, 10);
+      if (!isNaN(step)) renderReasonStory(step);
+    });
+  });
+
+  // Direct card clicks (click active does nothing, click prev/next advances to it)
+  $$('.story-card').forEach((card) => {
+    card.addEventListener('click', (e) => {
+      const idx = parseInt(card.dataset.storyIndex, 10);
+      if (idx !== activeReasonIndex) {
+        e.preventDefault();
+        renderReasonStory(idx);
+      }
+    });
+
+    // Keyboard support on card
+    card.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        const idx = parseInt(card.dataset.storyIndex, 10);
+        if (idx !== activeReasonIndex) {
+          e.preventDefault();
+          renderReasonStory(idx);
+        }
+      }
+    });
+  });
+
+  // Keyboard navigation within the carousel container
+  container.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft') {
+      e.preventDefault();
+      renderReasonStory(activeReasonIndex - 1);
+    } else if (e.key === 'ArrowRight') {
+      e.preventDefault();
+      renderReasonStory(activeReasonIndex + 1);
+    } else if (e.key === 'Home') {
+      e.preventDefault();
+      renderReasonStory(0);
+    } else if (e.key === 'End') {
+      e.preventDefault();
+      renderReasonStory(2);
+    }
+  });
+
+  // Touch Swipe on mobile
+  let touchStartX = 0;
+  let touchStartY = 0;
+  let touchStartTime = 0;
+
+  stage.addEventListener('touchstart', (e) => {
+    const touch = e.touches[0];
+    touchStartX = touch.clientX;
+    touchStartY = touch.clientY;
+    touchStartTime = Date.now();
+  }, { passive: true });
+
+  stage.addEventListener('touchend', (e) => {
+    const touch = e.changedTouches[0];
+    const diffX = touch.clientX - touchStartX;
+    const diffY = touch.clientY - touchStartY;
+    const timeTaken = Date.now() - touchStartTime;
+
+    // Must be predominantly horizontal and sufficiently swiped (> 36px within 800ms)
+    if (Math.abs(diffX) > 36 && Math.abs(diffX) > Math.abs(diffY) * 1.2 && timeTaken < 800) {
+      if (diffX < 0) {
+        // Swiped left -> next story
+        renderReasonStory(activeReasonIndex + 1);
+      } else {
+        // Swiped right -> prev story
+        renderReasonStory(activeReasonIndex - 1);
+      }
+    }
+  }, { passive: true });
+
+  renderReasonStory(0, false);
+}
+
+// =====================================================================
+// SECTION 04 · X-RAY EXPLORER + MISSION CONTROL EXHIBIT CONTROLLER
 // =====================================================================
 const stagesData = [
   null, // 0 = Full Device Overview
@@ -1138,6 +1349,646 @@ $$('.val-drawer-close').forEach((closeBtn) => {
     }
   });
 });
+
+// =====================================================================
+// SECTION 10 · SUARA PELAWAT (FEEDBACK SYSTEM) & MASCOT FAB CONTROLLER
+// =====================================================================
+let feedbackItems = [];
+let currentFeedbackPage = 0;
+let isMascotBlinking = false;
+let mascotBlinkTimer = null;
+
+// Mascot Eye Blink and Floating Button Controller
+function initMascotFab() {
+  const fab = $('#mascotFab');
+  if (!fab) return;
+
+  const openFrame = $('.mascot-frame-open', fab);
+  const halfFrame = $('.mascot-frame-half', fab);
+  const closedFrame = $('.mascot-frame-closed', fab);
+
+  function blink() {
+    if (isMascotBlinking || prefersReducedMotion || !openFrame || !halfFrame || !closedFrame) return;
+    isMascotBlinking = true;
+
+    // Frame sequence: open -> half closed -> closed -> half closed -> open
+    openFrame.classList.remove('is-visible');
+    halfFrame.classList.add('is-visible');
+
+    setTimeout(() => {
+      halfFrame.classList.remove('is-visible');
+      closedFrame.classList.add('is-visible');
+
+      setTimeout(() => {
+        closedFrame.classList.remove('is-visible');
+        halfFrame.classList.add('is-visible');
+
+        setTimeout(() => {
+          halfFrame.classList.remove('is-visible');
+          openFrame.classList.add('is-visible');
+          isMascotBlinking = false;
+        }, 90);
+      }, 120);
+    }, 90);
+  }
+
+  // Periodic subtle blink (every 6 seconds)
+  if (!prefersReducedMotion) {
+    if (mascotBlinkTimer) clearInterval(mascotBlinkTimer);
+    mascotBlinkTimer = setInterval(blink, 6000);
+  }
+
+  // Single blink on hover or focus
+  let lastHoverBlink = 0;
+  fab.addEventListener('mouseenter', () => {
+    if (Date.now() - lastHoverBlink > 2500) {
+      lastHoverBlink = Date.now();
+      blink();
+    }
+  });
+
+  fab.addEventListener('focus', () => {
+    if (Date.now() - lastHoverBlink > 2500) {
+      lastHoverBlink = Date.now();
+      blink();
+    }
+  });
+
+  // Clicking smoothly scrolls to feedback section (DOES NOT open form or side drawer)
+  fab.addEventListener('click', (e) => {
+    e.preventDefault();
+    const feedbackSection = $('#feedback');
+    if (feedbackSection) {
+      feedbackSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+
+  // Hide or minimize mascot FAB while feedback or finale section is in view
+  const feedbackSection = $('#feedback');
+  const finaleSection = $('#finale');
+  if ('IntersectionObserver' in window) {
+    const fabObserver = new IntersectionObserver((entries) => {
+      const isAnyVisible = entries.some(e => e.isIntersecting);
+      fab.classList.toggle('is-hidden', isAnyVisible);
+    }, { threshold: 0.1 });
+    if (feedbackSection) fabObserver.observe(feedbackSection);
+    if (finaleSection) fabObserver.observe(finaleSection);
+  }
+}
+
+// Escape HTML helper for safe feedback rendering
+function escapeHtml(str) {
+  if (!str) return '';
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+// Render feedback cards and pagination
+function renderFeedbackCards() {
+  const track = $('#feedbackCardsTrack');
+  const emptyState = $('#feedbackEmptyState');
+  const controlsBar = $('#feedbackControlsBar');
+  const currentPageEl = $('#feedbackCurrentPage');
+  const totalPagesEl = $('#feedbackTotalPages');
+  const prevBtn = $('#feedbackPrevBtn');
+  const nextBtn = $('#feedbackNextBtn');
+  if (!track || !emptyState || !controlsBar) return;
+
+  if (!feedbackItems || feedbackItems.length === 0) {
+    track.style.display = 'none';
+    controlsBar.style.display = 'none';
+    emptyState.style.display = 'flex';
+    return;
+  }
+
+  track.style.display = 'grid';
+  controlsBar.style.display = 'flex';
+  emptyState.style.display = 'none';
+
+  const cardsPerPage = window.innerWidth > 992 ? 3 : (window.innerWidth > 640 ? 2 : 1);
+  const totalPages = Math.max(1, Math.ceil(feedbackItems.length / cardsPerPage));
+  currentFeedbackPage = Math.min(Math.max(0, currentFeedbackPage), totalPages - 1);
+
+  if (currentPageEl) currentPageEl.textContent = String(currentFeedbackPage + 1).padStart(2, '0');
+  if (totalPagesEl) totalPagesEl.textContent = String(totalPages).padStart(2, '0');
+
+  if (prevBtn) prevBtn.disabled = currentFeedbackPage === 0;
+  if (nextBtn) nextBtn.disabled = currentFeedbackPage >= totalPages - 1;
+
+  const startIndex = currentFeedbackPage * cardsPerPage;
+  const pageSlice = feedbackItems.slice(startIndex, startIndex + cardsPerPage);
+
+  const opinionColors = {
+    menarik: { label: translations[currentLanguage].optGreat, class: 'opinion-great' },
+    tambah_baik: { label: translations[currentLanguage].optImprove, class: 'opinion-improve' },
+    kurang_sesuai: { label: translations[currentLanguage].optRework, class: 'opinion-rework' }
+  };
+
+  track.innerHTML = pageSlice.map((item) => {
+    const authorName = escapeHtml(item.name || (currentLanguage === 'ms' ? 'Pelawat Web' : 'Web Visitor'));
+    const authorDate = escapeHtml(item.date || item.formattedDate || '2026');
+    const opinionInfo = opinionColors[item.opinion] || { label: item.opinion || 'Maklum balas', class: 'opinion-great' };
+    const opinionTitle = escapeHtml(item.opinionTitle?.[currentLanguage] || item.opinionTitle?.ms || opinionInfo.label);
+    const feedbackText = escapeHtml(item.text?.[currentLanguage] || item.text?.ms || item.feedback || '');
+    const noteText = escapeHtml(item.note?.[currentLanguage] || item.note?.ms || translations[currentLanguage].verifiedCardTag);
+
+    const avatarHtml = item.avatarData || item.avatar
+      ? `<img src="${escapeHtml(item.avatarData || item.avatar)}" alt="${authorName}" class="avatar-img" loading="lazy">`
+      : `<span class="avatar-placeholder" aria-hidden="true">?</span>`;
+
+    return `
+      <article class="feedback-card" tabindex="0">
+        <div class="feedback-card-header">
+          <div class="feedback-avatar-wrap">
+            ${avatarHtml}
+          </div>
+          <div class="feedback-meta">
+            <h4 class="feedback-author-name">${authorName}</h4>
+            <span class="feedback-date">${authorDate}</span>
+          </div>
+        </div>
+
+        <div class="feedback-card-body">
+          <div class="feedback-topic-row">
+            <span class="feedback-topic-title">${opinionTitle}</span>
+            <span class="feedback-opinion-pill ${opinionInfo.class}">${opinionInfo.label}</span>
+          </div>
+          <p class="feedback-text">${feedbackText}</p>
+        </div>
+
+        <div class="feedback-card-footer">
+          <span class="card-status-badge">${noteText}</span>
+        </div>
+      </article>
+    `;
+  }).join('');
+}
+
+// Supabase Client Helper
+let supabaseClient = null;
+function getSupabase() {
+  if (supabaseClient) return supabaseClient;
+  const cfg = window.AEDES_SUPABASE_CONFIG;
+  if (window.supabase && typeof window.supabase.createClient === 'function' && cfg && cfg.url && cfg.anonKey && cfg.url.startsWith('https://')) {
+    try {
+      supabaseClient = window.supabase.createClient(cfg.url, cfg.anonKey);
+      return supabaseClient;
+    } catch (err) {
+      console.warn('[AEDES-X] Supabase init error:', err);
+    }
+  }
+  return null;
+}
+
+// Load approved feedback from Supabase, backend or fallback to static json
+async function loadFeedbackData() {
+  const client = getSupabase();
+  if (client) {
+    try {
+      // Query approved and public feedback from Supabase
+      const { data, error } = await client
+        .from('feedback')
+        .select('*')
+        .eq('status', 'approved')
+        .eq('is_public', true)
+        .order('created_at', { ascending: false });
+
+      if (!error && Array.isArray(data)) {
+        feedbackItems = data.map((row) => ({
+          id: row.id,
+          name: row.name || (currentLanguage === 'ms' ? 'Pelawat Web' : 'Web Visitor'),
+          date: new Date(row.created_at).toLocaleDateString(currentLanguage === 'ms' ? 'ms-MY' : 'en-GB', { day: 'numeric', month: 'short', year: 'numeric' }),
+          opinion: row.opinion,
+          opinionTitle: {
+            ms: row.opinion === 'menarik' ? 'Tentang idea projek' : (row.opinion === 'tambah_baik' ? 'Cadangan penambahbaikan' : 'Pandangan umum'),
+            en: row.opinion === 'menarik' ? 'About project idea' : (row.opinion === 'tambah_baik' ? 'Improvement suggestion' : 'General thought')
+          },
+          text: {
+            ms: row.feedback,
+            en: row.feedback
+          },
+          avatar: row.avatar_url,
+          note: {
+            ms: 'DISAHKAN · MAKLUM BALAS SEBENAR',
+            en: 'VERIFIED · AUTHENTIC FEEDBACK'
+          }
+        }));
+        renderFeedbackCards();
+        return;
+      }
+    } catch (err) {
+      console.warn('[AEDES-X] Supabase query failed:', err);
+    }
+  }
+
+  // Fallback to local Node server API
+  try {
+    const res = await fetch('/api/feedback');
+    if (res.ok) {
+      const data = await res.json();
+      if (Array.isArray(data)) {
+        feedbackItems = data;
+        renderFeedbackCards();
+        return;
+      }
+    }
+  } catch (e) {}
+
+  // Fallback to static feedback-data.json
+  try {
+    const staticRes = await fetch('feedback-data.json');
+    if (staticRes.ok) {
+      const staticData = await staticRes.json();
+      if (Array.isArray(staticData)) {
+        feedbackItems = staticData;
+        renderFeedbackCards();
+        return;
+      }
+    }
+  } catch (e) {}
+
+  feedbackItems = [];
+  renderFeedbackCards();
+}
+
+// Feedback section setup
+function initFeedbackSection() {
+  loadFeedbackData();
+
+  const prevBtn = $('#feedbackPrevBtn');
+  const nextBtn = $('#feedbackNextBtn');
+  const cardsWrapper = $('#feedbackCardsWrapper');
+
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+      if (currentFeedbackPage > 0) {
+        currentFeedbackPage -= 1;
+        renderFeedbackCards();
+      }
+    });
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+      const cardsPerPage = window.innerWidth > 992 ? 3 : (window.innerWidth > 640 ? 2 : 1);
+      const totalPages = Math.ceil(feedbackItems.length / cardsPerPage);
+      if (currentFeedbackPage < totalPages - 1) {
+        currentFeedbackPage += 1;
+        renderFeedbackCards();
+      }
+    });
+  }
+
+  // Keyboard navigation within cards wrapper
+  if (cardsWrapper) {
+    cardsWrapper.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') {
+        if (currentFeedbackPage > 0) {
+          currentFeedbackPage -= 1;
+          renderFeedbackCards();
+        }
+      } else if (e.key === 'ArrowRight') {
+        const cardsPerPage = window.innerWidth > 992 ? 3 : (window.innerWidth > 640 ? 2 : 1);
+        const totalPages = Math.ceil(feedbackItems.length / cardsPerPage);
+        if (currentFeedbackPage < totalPages - 1) {
+          currentFeedbackPage += 1;
+          renderFeedbackCards();
+        }
+      }
+    });
+  }
+
+  // Window resize to adapt pagination count
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      renderFeedbackCards();
+    }, 150);
+  });
+
+  // Modal open buttons
+  const btnAdd = $('#btnAddFeedback');
+  const btnEmptyAdd = $('#btnEmptyAddFeedback');
+  const modal = $('#feedbackModal');
+
+  function openModal() {
+    if (!modal) return;
+    const form = $('#feedbackForm');
+    const successCard = $('#feedbackSuccessCard');
+    const alertBox = $('#formAlert');
+    if (form) {
+      form.reset();
+      form.style.display = 'block';
+    }
+    if (successCard) successCard.style.display = 'none';
+    if (alertBox) {
+      alertBox.style.display = 'none';
+      alertBox.textContent = '';
+    }
+    resetPhotoPreview();
+    updateCharCounter();
+
+    if (typeof modal.showModal === 'function') {
+      modal.showModal();
+    } else {
+      modal.setAttribute('open', '');
+    }
+  }
+
+  if (btnAdd) btnAdd.addEventListener('click', openModal);
+  if (btnEmptyAdd) btnEmptyAdd.addEventListener('click', openModal);
+
+  initFeedbackModal();
+}
+
+let uploadedPhotoBase64 = null;
+
+function resetPhotoPreview() {
+  uploadedPhotoBase64 = null;
+  const fileInput = $('#fbPhoto');
+  const previewImg = $('#photoPreviewImg');
+  const placeholderIcon = $('.photo-placeholder-icon');
+  const btnRemove = $('#btnRemovePhoto');
+  if (fileInput) fileInput.value = '';
+  if (previewImg) {
+    previewImg.src = '';
+    previewImg.style.display = 'none';
+  }
+  if (placeholderIcon) placeholderIcon.style.display = 'block';
+  if (btnRemove) btnRemove.style.display = 'none';
+}
+
+function updateCharCounter() {
+  const textarea = $('#fbText');
+  const counter = $('#charCount');
+  if (textarea && counter) {
+    counter.textContent = String(textarea.value.length);
+  }
+}
+
+// Feedback modal form logic
+function initFeedbackModal() {
+  const modal = $('#feedbackModal');
+  const closeBtn = $('#feedbackModalClose');
+  const form = $('#feedbackForm');
+  const textarea = $('#fbText');
+  const fileInput = $('#fbPhoto');
+  const btnRemovePhoto = $('#btnRemovePhoto');
+  const alertBox = $('#formAlert');
+  const btnCloseSuccess = $('#btnCloseSuccess');
+
+  function closeModal() {
+    if (!modal) return;
+    if (typeof modal.close === 'function') {
+      modal.close();
+    } else {
+      modal.removeAttribute('open');
+    }
+  }
+
+  if (closeBtn) closeBtn.addEventListener('click', closeModal);
+  if (btnCloseSuccess) btnCloseSuccess.addEventListener('click', closeModal);
+
+  // Close on backdrop click
+  if (modal) {
+    modal.addEventListener('click', (e) => {
+      const card = $('.feedback-modal-card', modal);
+      if (card && !card.contains(e.target)) {
+        closeModal();
+      }
+    });
+  }
+
+  if (textarea) {
+    textarea.addEventListener('input', updateCharCounter);
+  }
+
+  // Profile image upload handling & validation
+  if (fileInput) {
+    fileInput.addEventListener('change', () => {
+      const file = fileInput.files?.[0];
+      if (!file) return;
+
+      // Validate format
+      const validTypes = ['image/png', 'image/jpeg', 'image/webp'];
+      if (!validTypes.includes(file.type)) {
+        if (alertBox) {
+          alertBox.textContent = currentLanguage === 'ms' 
+            ? 'Format fail tidak disokong. Sila gunakan PNG, JPG atau WebP.' 
+            : 'Unsupported format. Please use PNG, JPG or WebP.';
+          alertBox.style.display = 'block';
+        }
+        resetPhotoPreview();
+        return;
+      }
+
+      // Validate size (max 2MB)
+      if (file.size > 2 * 1024 * 1024) {
+        if (alertBox) {
+          alertBox.textContent = translations[currentLanguage].errPhotoSize;
+          alertBox.style.display = 'block';
+        }
+        resetPhotoPreview();
+        return;
+      }
+
+      if (alertBox) alertBox.style.display = 'none';
+
+      // Read as base64
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        uploadedPhotoBase64 = event.target.result;
+        const previewImg = $('#photoPreviewImg');
+        const placeholderIcon = $('.photo-placeholder-icon');
+        const btnRemove = $('#btnRemovePhoto');
+        if (previewImg) {
+          previewImg.src = uploadedPhotoBase64;
+          previewImg.style.display = 'block';
+        }
+        if (placeholderIcon) placeholderIcon.style.display = 'none';
+        if (btnRemove) btnRemove.style.display = 'inline-block';
+      };
+      reader.readAsDataURL(file);
+    });
+  }
+
+  if (btnRemovePhoto) {
+    btnRemovePhoto.addEventListener('click', resetPhotoPreview);
+  }
+
+  // Form submission handler
+  if (form) {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      // Bot trap check
+      if (form.website_trap && form.website_trap.value) return;
+
+      // Rate limit check (30 seconds cooldown)
+      const lastSubmit = parseInt(localStorage.getItem('aedesLastFeedbackTime') || '0', 10);
+      if (Date.now() - lastSubmit < 25000) {
+        if (alertBox) {
+          alertBox.textContent = translations[currentLanguage].errSpam;
+          alertBox.style.display = 'block';
+        }
+        return;
+      }
+
+      const opinion = form.opinion?.value;
+      const feedback = form.feedback?.value?.trim();
+      const name = form.name?.value?.trim() || '';
+      const isPublic = Boolean(form.isPublic?.checked);
+
+      if (!opinion || !feedback || feedback.length < 5) {
+        if (alertBox) {
+          alertBox.textContent = translations[currentLanguage].errRequired;
+          alertBox.style.display = 'block';
+        }
+        return;
+      }
+
+      if (alertBox) alertBox.style.display = 'none';
+
+      const submitBtn = $('#btnSubmitFeedback');
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        const textSpan = submitBtn.querySelector('.submit-text');
+        if (textSpan) textSpan.textContent = translations[currentLanguage].btnSubmitting;
+      }
+
+      const client = getSupabase();
+      let avatarUrl = null;
+
+      // Handle avatar upload to Supabase Storage if client is configured
+      if (client && fileInput && fileInput.files?.[0]) {
+        try {
+          const file = fileInput.files[0];
+          const fileExt = file.name.split('.').pop().toLowerCase();
+          const cleanFileName = `${Date.now()}_${Math.random().toString(36).substring(2, 8)}.${fileExt}`;
+          const filePath = `avatars/${cleanFileName}`;
+
+          const { error: uploadErr } = await client.storage
+            .from('feedback-avatars')
+            .upload(filePath, file, { cacheControl: '3600', upsert: false });
+
+          if (!uploadErr) {
+            const { data: pubData } = client.storage
+              .from('feedback-avatars')
+              .getPublicUrl(filePath);
+            avatarUrl = pubData?.publicUrl || null;
+          }
+        } catch (storageErr) {
+          console.warn('[AEDES-X] Avatar upload to Supabase storage failed:', storageErr);
+        }
+      }
+
+      if (!avatarUrl && uploadedPhotoBase64) {
+        avatarUrl = uploadedPhotoBase64;
+      }
+
+      let submittedSuccessfully = false;
+
+      // 1. Try Supabase Insert
+      if (client) {
+        try {
+          const { error: insertErr } = await client
+            .from('feedback')
+            .insert([{
+              opinion,
+              feedback,
+              name: name || null,
+              avatar_url: avatarUrl,
+              is_public: isPublic,
+              status: 'pending' // always pending review!
+            }]);
+
+          if (!insertErr) {
+            submittedSuccessfully = true;
+          } else {
+            console.warn('[AEDES-X] Supabase insert error:', insertErr);
+          }
+        } catch (sbErr) {
+          console.warn('[AEDES-X] Supabase error:', sbErr);
+        }
+      }
+
+      // 2. Try POST to Node server
+      if (!submittedSuccessfully) {
+        try {
+          const response = await fetch('/api/feedback', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              opinion,
+              feedback,
+              name,
+              avatar: avatarUrl,
+              isPublic
+            })
+          });
+          if (response.ok) {
+            submittedSuccessfully = true;
+          }
+        } catch (err) {}
+      }
+
+      // 3. Fallback to Local Pending Review Queue
+      if (!submittedSuccessfully) {
+        try {
+          const localQueue = JSON.parse(localStorage.getItem('aedesPendingReviews') || '[]');
+          localQueue.unshift({
+            id: 'sub-' + Date.now(),
+            date: new Date().toISOString(),
+            formattedDate: new Date().toLocaleDateString(currentLanguage === 'ms' ? 'ms-MY' : 'en-GB', { day: 'numeric', month: 'short', year: 'numeric' }),
+            opinion,
+            feedback,
+            name: name || (currentLanguage === 'ms' ? 'Pelawat Web' : 'Web Visitor'),
+            avatar: avatarUrl,
+            isPublic,
+            status: 'pending_review'
+          });
+          localStorage.setItem('aedesPendingReviews', JSON.stringify(localQueue));
+          submittedSuccessfully = true;
+        } catch (e) {
+          console.warn('Local storage write failed:', e);
+        }
+      }
+
+      localStorage.setItem('aedesLastFeedbackTime', String(Date.now()));
+
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        const textSpan = submitBtn.querySelector('.submit-text');
+        if (textSpan) textSpan.textContent = translations[currentLanguage].btnSubmit;
+      }
+
+      // Show success view
+      form.style.display = 'none';
+      const successCard = $('#feedbackSuccessCard');
+      const successDesc = $('#successDescText');
+      if (successCard) {
+        if (successDesc) {
+          successDesc.textContent = isPublic 
+            ? translations[currentLanguage].successPublic 
+            : translations[currentLanguage].successPrivate;
+        }
+        successCard.style.display = 'flex';
+      }
+    });
+  }
+}
+
+// Initialise Section 02 Story Carousel
+initReasonStory();
+
+// Initialise Mascot FAB & Feedback Section
+initMascotFab();
+initFeedbackSection();
 
 // Initialise language and state
 applyLanguage(currentLanguage);

@@ -104,28 +104,144 @@
       </div>
     </section>
 
-    <section class="problem section" id="problem">
+    <section class="problem section" id="problem" aria-label="Kenapa kami bina AEDES-X?">
       <div class="section-head reveal">
         <p class="kicker" data-copy="challengeKicker">02 · KENAPA KAMI BINA AEDES-X?</p>
+        <div class="story-concept-tag" aria-label="Konsep bahagian">
+          <span class="concept-dot"></span>
+          <span class="concept-text" data-copy="challengeConcept">Tiga situasi, satu sebab kami bertindak</span>
+        </div>
         <h2 data-copy="problemTitle">Ancaman kecil.<br>Impak yang besar.</h2>
         <p data-copy="problemText">Nyamuk Aedes aktif di persekitaran komuniti. Kami mahu membantu mengurangkan pendedahan melalui satu penyelesaian bebas semburan kimia yang mudah dipantau.</p>
       </div>
-      <div class="challenge-grid">
-        <article class="challenge-card reveal">
-          <div class="challenge-image"><img src="assets/challenge-daily-space.webp" alt="Persekitaran rumah dan sekolah yang menjadi ruang aktiviti harian"></div><span>01</span>
-          <div class="challenge-copy"><h3 data-copy="challenge1Title">Aktif di ruang harian</h3>
-          <p data-copy="challenge1Text">Nyamuk Aedes boleh berada berhampiran ruang kediaman, sekolah dan kawasan aktiviti komuniti.</p></div>
-        </article>
-        <article class="challenge-card featured reveal">
-          <div class="challenge-image"><img src="assets/challenge-hidden-water.webp" alt="Takungan air kecil pada alas pasu dan kawasan terlindung"></div><span>02</span>
-          <div class="challenge-copy"><h3 data-copy="challenge2Title">Punca mudah terlepas pandang</h3>
-          <p data-copy="challenge2Text">Takungan air kecil dan kawasan terlindung memerlukan pemeriksaan yang teliti serta berulang.</p></div>
-        </article>
-        <article class="challenge-card reveal">
-          <div class="challenge-image"><img src="assets/challenge-consistent-action.webp" alt="Guru dan murid menjalankan pemeriksaan pencegahan secara berkala"></div><span>03</span>
-          <div class="challenge-copy"><h3 data-copy="challenge3Title">Pencegahan perlu konsisten</h3>
-          <p data-copy="challenge3Text">Pemantauan manual sahaja sukar dikekalkan. Komuniti memerlukan tindakan yang lebih mudah dan teratur.</p></div>
-        </article>
+
+      <!-- Interactive 3D Story Carousel for Year 6 Presentation -->
+      <div class="story-carousel-container reveal" id="storyCarouselContainer" role="region" aria-roledescription="carousel" aria-label="Tiga situasi cabaran AEDES-X">
+        <div class="story-carousel-viewport" id="storyCarouselViewport">
+          <div class="story-carousel-stage" id="storyCarouselStage">
+            <!-- Story Card 01 -->
+            <article class="story-card is-active" data-story-index="0" role="group" aria-roledescription="slide" aria-label="1 daripada 3: Aktif di ruang harian" tabindex="0">
+              <div class="story-card-media">
+                <img src="assets/challenge-daily-space.webp" alt="Persekitaran rumah dan sekolah yang menjadi ruang aktiviti harian" loading="eager">
+                <div class="story-card-overlay"></div>
+              </div>
+              <div class="story-card-chrome">
+                <div class="story-badge-row">
+                  <span class="story-category-tag" data-copy="story1Tag">SITUASI 01 · RUANG HARIAN</span>
+                  <span class="story-counter-pill">01</span>
+                </div>
+                <div class="story-card-content">
+                  <h3 class="story-title" data-copy="challenge1Title">Aktif di ruang harian</h3>
+                  <p class="story-desc" data-copy="challenge1Text">Nyamuk Aedes boleh berada berhampiran ruang kediaman, sekolah dan kawasan aktiviti komuniti.</p>
+                </div>
+                <div class="story-card-select-hint">
+                  <span class="hint-dot"></span>
+                  <span data-copy="storySelectHint">Pilih situasi ini</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Story Card 02 -->
+            <article class="story-card is-next" data-story-index="1" role="group" aria-roledescription="slide" aria-label="2 daripada 3: Punca mudah terlepas pandang" tabindex="0">
+              <div class="story-card-media">
+                <img src="assets/challenge-hidden-water.webp" alt="Takungan air kecil pada alas pasu dan kawasan terlindung" loading="lazy">
+                <div class="story-card-overlay"></div>
+              </div>
+              <div class="story-card-chrome">
+                <div class="story-badge-row">
+                  <span class="story-category-tag" data-copy="story2Tag">SITUASI 02 · TAKUNGAN AIR</span>
+                  <span class="story-counter-pill">02</span>
+                </div>
+                <div class="story-card-content">
+                  <h3 class="story-title" data-copy="challenge2Title">Punca mudah terlepas pandang</h3>
+                  <p class="story-desc" data-copy="challenge2Text">Takungan air kecil dan kawasan terlindung memerlukan pemeriksaan yang teliti serta berulang.</p>
+                </div>
+                <div class="story-card-select-hint">
+                  <span class="hint-dot"></span>
+                  <span data-copy="storySelectHint">Pilih situasi ini</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Story Card 03 -->
+            <article class="story-card is-prev" data-story-index="2" role="group" aria-roledescription="slide" aria-label="3 daripada 3: Pencegahan perlu konsisten" tabindex="0">
+              <div class="story-card-media">
+                <img src="assets/challenge-consistent-action.webp" alt="Guru dan murid menjalankan pemeriksaan pencegahan secara berkala" loading="lazy">
+                <div class="story-card-overlay"></div>
+              </div>
+              <div class="story-card-chrome">
+                <div class="story-badge-row">
+                  <span class="story-category-tag" data-copy="story3Tag">SITUASI 03 · KONSISTENSI</span>
+                  <span class="story-counter-pill">03</span>
+                </div>
+                <div class="story-card-content">
+                  <h3 class="story-title" data-copy="challenge3Title">Pencegahan perlu konsisten</h3>
+                  <p class="story-desc" data-copy="challenge3Text">Pemantauan manual sahaja sukar dikekalkan. Komuniti memerlukan tindakan yang lebih mudah dan teratur.</p>
+                </div>
+                <div class="story-card-select-hint">
+                  <span class="hint-dot"></span>
+                  <span data-copy="storySelectHint">Pilih situasi ini</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- Student-Friendly Presentation Controls Bar -->
+        <div class="story-carousel-controls" aria-label="Kawalan navigasi cerita situasi">
+          <button class="story-nav-btn story-nav-prev" id="storyPrevBtn" aria-label="Situasi sebelumnya" title="Situasi sebelumnya">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+
+          <!-- Interactive Stepper Pills / Progress Dots -->
+          <div class="story-stepper-track" role="tablist" aria-label="Pilih langkah cerita">
+            <button class="story-step-indicator active" data-step="0" role="tab" aria-selected="true" aria-label="Situasi 01: Aktif di ruang harian">
+              <span class="step-num">01</span>
+              <span class="step-label" data-copy="step1Short">Ruang Harian</span>
+            </button>
+            <button class="story-step-indicator" data-step="1" role="tab" aria-selected="false" aria-label="Situasi 02: Punca mudah terlepas pandang">
+              <span class="step-num">02</span>
+              <span class="step-label" data-copy="step2Short">Air Bertakung</span>
+            </button>
+            <button class="story-step-indicator" data-step="2" role="tab" aria-selected="false" aria-label="Situasi 03: Pencegahan perlu konsisten">
+              <span class="step-num">03</span>
+              <span class="step-label" data-copy="step3Short">Konsistensi</span>
+            </button>
+          </div>
+
+          <!-- 01 / 03 Progress Pill Counter -->
+          <div class="story-counter-badge" id="storyCounterBadge" aria-live="polite">
+            <span class="story-current-index" id="storyCurrentIndex">01</span>
+            <span class="story-counter-divider">/</span>
+            <span class="story-total-index">03</span>
+          </div>
+
+          <button class="story-nav-btn story-nav-next" id="storyNextBtn" aria-label="Situasi seterusnya" title="Situasi seterusnya">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
+
+        <!-- Touch / Keyboard Presentation Hint for Year 6 Students -->
+        <div class="story-presenter-hint">
+          <span class="hint-icon" aria-hidden="true">✦</span>
+          <span data-copy="storyPresenterHint">Gunakan anak panah papan kekunci, klik kad sisi, atau leret untuk beralih cerita.</span>
+        </div>
+      </div>
+
+      <!-- Concise Transition Line below story cards -->
+      <div class="story-leadout reveal" id="storyLeadout">
+        <div class="leadout-inner">
+          <div class="leadout-badge">
+            <span class="leadout-pulse"></span>
+            <span class="leadout-tag" data-copy="leadoutTag">KESIMPULAN INISIATIF</span>
+          </div>
+          <p class="leadout-statement" data-copy="reasonTransition">“Sebab itu kami membina AEDES-X.”</p>
+          <p class="leadout-sub" data-copy="leadoutSub">Satu inovasi STEM berasaskan tarikan pelbagai isyarat dan kawalan IoT untuk melindungi komuniti secara pintar tanpa semburan racun kimia.</p>
+          <a class="leadout-next-link" href="#mechanism" aria-label="Teruskan ke bahagian bagaimana perangkap berfungsi">
+            <span data-copy="leadoutNextText">Ketahui bagaimana AEDES-X bertindak</span>
+            <span class="leadout-arrow" aria-hidden="true">↘</span>
+          </a>
+        </div>
       </div>
     </section>
 
@@ -968,14 +1084,95 @@
       </div>
     </section>
 
-    <section class="finale section" id="finale">
-      <div class="finale-bg"></div>
-      <div class="finale-product reveal"><img src="assets/aedes-x-transparent.png" alt="Pandangan akhir produk AEDES-X"></div>
-      <div class="finale-copy reveal">
-        <p class="kicker">IOT RANGERS · 2026</p>
-        <h2>AEDES-X</h2>
-        <p data-copy="finalText">Inovasi kecil. Impak yang bermakna.</p>
-        <div class="school-lockup"><img src="assets/school-logo-transparent.png" alt="Logo SJKT Ladang Rinching"><div><b>SJKT LADANG RINCHING</b><span>IOT RANGERS</span></div></div>
+    <!-- SECTION 10 · SUARA PELAWAT (VISITOR FEEDBACK) -->
+    <section class="feedback-section section" id="feedback" aria-label="Suara Pelawat - Pandangan tentang AEDES-X">
+      <div class="feedback-container">
+        <!-- Section Header matching preview input_file_3.png -->
+        <div class="feedback-head-row reveal">
+          <div class="feedback-head-copy">
+            <p class="kicker" data-copy="feedbackKicker">09 / SUARA PELAWAT</p>
+            <h2 class="feedback-title" data-copy="feedbackTitle">Pandangan tentang AEDES-X</h2>
+            <p class="feedback-subtitle" data-copy="feedbackSubtitle">Maklum balas sebenar membantu kami membina versi yang lebih baik.</p>
+          </div>
+          <div class="feedback-head-action">
+            <button class="btn-add-feedback" id="btnAddFeedback" type="button" aria-haspopup="dialog" aria-controls="feedbackModal">
+              <span class="btn-icon" aria-hidden="true">+</span>
+              <span class="btn-label" data-copy="btnAddFeedback">Tambah feedback</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Feedback Cards Track / Carousel / Empty State -->
+        <div class="feedback-cards-wrapper reveal" id="feedbackCardsWrapper">
+          <div class="feedback-cards-track" id="feedbackCardsTrack" role="region" aria-live="polite">
+            <!-- Cards rendered dynamically by JS -->
+          </div>
+
+          <!-- Empty State (shown if no approved feedback exists) -->
+          <div class="feedback-empty-state" id="feedbackEmptyState" style="display: none;">
+            <div class="empty-state-icon">
+              <img src="assets/mascot-open.png" alt="" width="76" height="92" loading="lazy">
+            </div>
+            <h3 class="empty-state-title" data-copy="feedbackEmptyTitle">Belum ada feedback. Jadilah yang pertama berkongsi pendapat.</h3>
+            <p class="empty-state-sub" data-copy="feedbackEmptySub">Pandangan anda tentang prototaip AEDES-X amat berharga untuk murid inovator kami.</p>
+            <button class="btn-add-feedback empty-cta" id="btnEmptyAddFeedback" type="button" aria-haspopup="dialog" aria-controls="feedbackModal">
+              <span class="btn-icon" aria-hidden="true">+</span>
+              <span class="btn-label" data-copy="btnAddFeedback">Tambah feedback</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Controls Bar matching reference input_file_3.png & input_file_4.png -->
+        <div class="feedback-controls-bar reveal" id="feedbackControlsBar">
+          <div class="feedback-nav-group">
+            <button class="feedback-round-nav prev" id="feedbackPrevBtn" type="button" aria-label="Halaman maklum balas sebelumnya" title="Sebelumnya">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M15 18l-6-6 6-6"/>
+              </svg>
+            </button>
+            <button class="feedback-round-nav next" id="feedbackNextBtn" type="button" aria-label="Halaman maklum balas seterusnya" title="Seterusnya">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M9 18l6-6-6-6"/>
+              </svg>
+            </button>
+            <div class="feedback-page-badge" id="feedbackPageBadge">
+              <span class="page-current" id="feedbackCurrentPage">01</span>
+              <span class="page-divider">/</span>
+              <span class="page-total" id="feedbackTotalPages">01</span>
+            </div>
+          </div>
+
+          <div class="feedback-sequence-note">
+            <span data-copy="feedbackSequenceGuide">Lihat maklum balas mengikut urutan</span>
+          </div>
+        </div>
+
+        <!-- Bottom School/Team Banner Lockup (matching input_file_3.png bottom pill) -->
+        <div class="feedback-team-banner reveal">
+          <span>IoT Rangers · SJKT Ladang Rinching</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 11 · HALAMAN PENUTUP (FINALE SHOWCASE) -->
+    <section class="finale section" id="finale" aria-label="Penutup AEDES-X">
+      <div class="finale-bg" aria-hidden="true"></div>
+      <div class="finale-container">
+        <div class="finale-product reveal">
+          <img src="assets/aedes-x-transparent.png" alt="Pandangan fizikal prototaip AEDES-X" width="560" height="740" loading="lazy">
+        </div>
+        <div class="finale-copy reveal">
+          <p class="kicker">IOT RANGERS · 2026</p>
+          <h2 class="finale-title">AEDES-X</h2>
+          <p class="finale-lead" data-copy="finalText">Inovasi kecil. Impak yang bermakna.</p>
+          <div class="school-lockup">
+            <img src="assets/school-logo-transparent.png" alt="Logo SJKT Ladang Rinching" width="58" height="68" loading="lazy">
+            <div class="school-text">
+              <b>SJKT LADANG RINCHING</b>
+              <span>IOT RANGERS</span>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   </main>
@@ -987,6 +1184,135 @@
     <video controls playsinline><source src="assets/demo-dashboard.mp4" type="video/mp4"></video>
   </dialog>
 
+  <!-- Modal Dialog: Tambah Feedback Pelawat -->
+  <dialog class="feedback-dialog" id="feedbackModal" aria-labelledby="fbModalTitle">
+    <div class="feedback-modal-card">
+      <button class="feedback-modal-close" id="feedbackModalClose" type="button" aria-label="Tutup borang">✕</button>
+
+      <div class="modal-form-header">
+        <div class="modal-badge">
+          <span class="modal-badge-dot"></span>
+          <span data-copy="feedbackKicker">09 / SUARA PELAWAT</span>
+        </div>
+        <h3 id="fbModalTitle" data-copy="formTitle">Kongsi Maklum Balas Anda</h3>
+        <p data-copy="formSubtitle">Bantu murid inovator IoT Rangers menambah baik prototaip AEDES-X.</p>
+      </div>
+
+      <!-- Form View -->
+      <form class="feedback-form" id="feedbackForm" novalidate>
+        <!-- Anti-spam honeypot -->
+        <input type="text" name="website_trap" style="display:none !important;" tabindex="-1" autocomplete="off">
+
+        <!-- Question 1: Apa pendapat anda tentang AEDES-X? -->
+        <div class="form-group">
+          <label class="form-label" data-copy="q1Label">1. Apa pendapat anda tentang AEDES-X? <span class="req">*</span></label>
+          <div class="opinion-radio-grid" role="radiogroup" aria-required="true">
+            <label class="opinion-chip">
+              <input type="radio" name="opinion" value="menarik" required checked>
+              <span class="chip-content">
+                <span class="chip-icon">✨</span>
+                <b data-copy="optGreat">Menarik</b>
+              </span>
+            </label>
+            <label class="opinion-chip">
+              <input type="radio" name="opinion" value="tambah_baik">
+              <span class="chip-content">
+                <span class="chip-icon">🛠️</span>
+                <b data-copy="optImprove">Boleh ditambah baik</b>
+              </span>
+            </label>
+            <label class="opinion-chip">
+              <input type="radio" name="opinion" value="kurang_sesuai">
+              <span class="chip-content">
+                <span class="chip-icon">💡</span>
+                <b data-copy="optRework">Kurang sesuai</b>
+              </span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Question 2: Apa yang boleh kami tambah baik? -->
+        <div class="form-group">
+          <label class="form-label" for="fbText" data-copy="q2Label">2. Apa yang boleh kami tambah baik? <span class="req">*</span></label>
+          <textarea id="fbText" name="feedback" rows="3" required maxlength="1000" placeholder="Tulis pandangan atau cadangan anda di sini (cth: saiz perumah, aplikasi, ketahanan)..." data-copy-placeholder="q2Placeholder"></textarea>
+          <div class="char-count"><span id="charCount">0</span>/1000</div>
+        </div>
+
+        <!-- Question 3: Name or nickname (optional) -->
+        <div class="form-group">
+          <label class="form-label" for="fbName" data-copy="nameLabel">Nama atau nama panggilan <span class="opt">(Pilihan)</span></label>
+          <input type="text" id="fbName" name="name" maxlength="80" placeholder="Contoh: Cikgu Rosli / Pelawat STEM" data-copy-placeholder="namePlaceholder">
+        </div>
+
+        <!-- Question 4: Profile photo (optional) with preview and remove button -->
+        <div class="form-group">
+          <label class="form-label" data-copy="photoLabel">Gambar profil <span class="opt">(Pilihan)</span></label>
+          <div class="photo-upload-wrap">
+            <div class="photo-preview-circle" id="photoPreviewCircle">
+              <span class="photo-placeholder-icon">👤</span>
+              <img id="photoPreviewImg" src="" alt="Pratonton foto" style="display:none;">
+            </div>
+            <div class="photo-upload-actions">
+              <label class="btn-upload-file" for="fbPhoto">
+                <span data-copy="photoUploadBtn">Pilih Foto</span>
+                <input type="file" id="fbPhoto" accept="image/png, image/jpeg, image/webp" style="display:none;">
+              </label>
+              <button class="btn-remove-photo" id="btnRemovePhoto" type="button" style="display:none;" data-copy="photoRemoveBtn">Buang</button>
+              <span class="photo-hint" data-copy="photoHint">PNG, JPG atau WebP (Maksimum 2MB)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Question 5: Public consent toggle (Default UNCHECKED / PRIVATE) -->
+        <div class="form-group consent-group">
+          <label class="consent-checkbox-wrap">
+            <input type="checkbox" id="fbConsent" name="isPublic">
+            <span class="custom-checkbox" aria-hidden="true"></span>
+            <span class="consent-text" data-copy="consentLabel">Benarkan nama dan maklum balas saya dipaparkan di laman web (selepas semakan).</span>
+          </label>
+          <p class="consent-subtext" data-copy="consentNotice">Secara lalai, maklum balas disimpan secara peribadi melainkan anda membenarkannya di atas.</p>
+        </div>
+
+        <!-- Error alert if validation fails -->
+        <div class="form-alert error" id="formAlert" style="display: none;" role="alert"></div>
+
+        <!-- Submit button -->
+        <div class="form-submit-row">
+          <button class="btn-submit-feedback" id="btnSubmitFeedback" type="submit">
+            <span class="submit-text" data-copy="btnSubmit">Hantar Maklum Balas</span>
+          </button>
+        </div>
+      </form>
+
+      <!-- Success View -->
+      <div class="feedback-success-card" id="feedbackSuccessCard" style="display: none;">
+        <div class="success-mascot-wrap">
+          <img src="assets/mascot-open.png" alt="AEDES-X Mascot" width="80" height="96">
+        </div>
+        <h4 class="success-title">Maklum Balas Diterima!</h4>
+        <p class="success-desc" id="successDescText">Terima kasih atas pandangan anda.</p>
+        <button class="btn-close-success" id="btnCloseSuccess" type="button" data-copy="btnDone">Tutup</button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Floating AEDES-X Mascot Button (Smooth Scroll to Feedback, Blinking Eyes + Visible "Lihat maklum balas" Pill) -->
+  <button class="mascot-fab" id="mascotFab" type="button" aria-label="Lihat maklum balas pelawat" title="Lihat maklum balas">
+    <div class="mascot-fab-glow" aria-hidden="true"></div>
+    <div class="mascot-frame-wrap" aria-hidden="true">
+      <img class="mascot-frame mascot-frame-open is-visible" src="assets/mascot-open.png" alt="" width="72" height="88">
+      <img class="mascot-frame mascot-frame-half" src="assets/mascot-half.png" alt="" width="72" height="88" loading="eager">
+      <img class="mascot-frame mascot-frame-closed" src="assets/mascot-closed.png" alt="" width="72" height="88" loading="eager">
+    </div>
+    <span class="mascot-label-pill">
+      <span class="mascot-label-text" data-copy="mascotBtnLabel">Lihat maklum balas</span>
+      <span class="mascot-label-arrow" aria-hidden="true">↓</span>
+    </span>
+  </button>
+
+  <!-- Supabase CDN Client & Project Configuration -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase-config.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
