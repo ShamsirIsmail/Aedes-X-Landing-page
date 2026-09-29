@@ -9,7 +9,7 @@ let activeStoryChapter = 1;
 
 const translations = {
   ms: {
-    navProblem:'Tujuan', navMechanism:'Cara Berfungsi', navSystem:'Teroka Alat', navModes:'3 Mod', navDashboard:'Papan Pemuka', navCompare:'Keistimewaan', navValidation:'Ujian', nationalTag:'PERINGKAT KEBANGSAAN · 2026',
+    navProblem:'Tujuan', navMechanism:'Cara Berfungsi', navSystem:'Teroka Alat', navModes:'3 Mod', navDashboard:'Papan Pemuka', navCompare:'Keistimewaan', navValidation:'Ujian', navGallery:'Galeri Video', nationalTag:'PERINGKAT KEBANGSAAN · 2026',
     loadingExperience:'MENYEDIAKAN PENGALAMAN', heroTitle:'PERLINDUNGAN<br><em>LEBIH PINTAR.</em>', heroText:'Prototaip perangkap nyamuk pintar yang menggabungkan tarikan CO₂, cahaya UV, aliran udara dan mikropengawal ESP32.',
     heroStatModes:'mod operasi', heroStatControls:'kaedah kawalan', heroStatStages:'peringkat sistem', beat1Label:'ISYARAT TARIKAN', beat1Title:'Nyamuk mengesan<br>isyarat CO₂.', beat2Label:'TARIKAN TAMBAHAN', beat2Title:'Cahaya UV<br>memandu laluan.', beat3Label:'ALIRAN UDARA', beat3Title:'Kipas menarik nyamuk<br>ke ruang tangkapan.', heroEndLabel:'INOVASI STEM · KAWALAN IoT', exploreMechanism:'Bagaimana ia berfungsi', scrollGuide:'SKROL UNTUK MENGGERAKKAN CERITA',
     challengeKicker:'02 · KENAPA KAMI BINA AEDES-X?', challengeConcept:'Tiga situasi, satu sebab kami bertindak', problemTitle:'Ancaman kecil.<br>Impak yang besar.', problemText:'Nyamuk Aedes aktif di persekitaran komuniti. Kami mahu membantu mengurangkan pendedahan melalui satu penyelesaian bebas semburan kimia yang mudah dipantau.',
@@ -83,10 +83,13 @@ const translations = {
     successPublic:'Terima kasih! Maklum balas anda telah diterima dan dihantar ke barisan semakan sebelum dipaparkan.',
     successPrivate:'Terima kasih! Maklum balas peribadi anda telah selamat dihantar kepada pasukan AEDES-X.',
     btnDone:'Tutup', errRequired:'Sila pilih pendapat anda dan lengkapkan cadangan penambahbaikan.',
-    errPhotoSize:'Saiz gambar melebihi had 2MB.', errSpam:'Sila tunggu sebentar sebelum menghantar maklum balas baharu.'
+    errPhotoSize:'Saiz gambar melebihi had 2MB.', errSpam:'Sila tunggu sebentar sebelum menghantar maklum balas baharu.',
+    galleryKicker:'10 / GALERI VIDEO', galleryTitle:'Demonstrasi Video AEDES-X', galleryAutoAdvanceBadge:'PUTARAN AUTOMATIK',
+    galleryPrev:'Video sebelumnya', galleryNext:'Video seterusnya', galleryPlay:'Mainkan video', galleryPause:'Jeda video',
+    galleryMute:'Bisu', galleryUnmute:'Buka bunyi'
   },
   en: {
-    navProblem:'Purpose', navMechanism:'How It Works', navSystem:'Explore Anatomy', navModes:'3 Modes', navDashboard:'Dashboard', navCompare:'Differences', navValidation:'Testing', nationalTag:'NATIONAL STAGE · 2026',
+    navProblem:'Purpose', navMechanism:'How It Works', navSystem:'Explore Anatomy', navModes:'3 Modes', navDashboard:'Dashboard', navCompare:'Differences', navValidation:'Testing', navGallery:'Video Gallery', nationalTag:'NATIONAL STAGE · 2026',
     loadingExperience:'PREPARING EXPERIENCE', heroTitle:'SMARTER<br><em>PROTECTION.</em>', heroText:'A smart mosquito-trap prototype combining CO₂ attraction, UV light, airflow and ESP32 microcontroller.',
     heroStatModes:'operating modes', heroStatControls:'control methods', heroStatStages:'system stages', beat1Label:'ATTRACTION SIGNAL', beat1Title:'Mosquitoes detect<br>the CO₂ signal.', beat2Label:'SECONDARY ATTRACTION', beat2Title:'UV light<br>guides the path.', beat3Label:'AIRFLOW', beat3Title:'The fan pulls mosquitoes<br>into the capture chamber.', heroEndLabel:'STEM INNOVATION · IoT CONTROL', exploreMechanism:'How it works', scrollGuide:'SCROLL TO MOVE THE STORY',
     challengeKicker:'02 · WHY WE BUILT AEDES-X', challengeConcept:'Three situations, one reason we act', problemTitle:'A small threat.<br>A major impact.', problemText:'Aedes mosquitoes are active around our communities. We aim to reduce exposure through a chemical-spray-free solution that is easy to monitor.',
@@ -160,7 +163,10 @@ const translations = {
     successPublic:'Thank you! Your feedback has been received and queued for review before appearing publicly.',
     successPrivate:'Thank you! Your private feedback has been securely sent to the AEDES-X team.',
     btnDone:'Close', errRequired:'Please select your opinion and provide a suggestion.',
-    errPhotoSize:'Image size exceeds the 2MB limit.', errSpam:'Please wait a moment before submitting again.'
+    errPhotoSize:'Image size exceeds the 2MB limit.', errSpam:'Please wait a moment before submitting again.',
+    galleryKicker:'10 / VIDEO GALLERY', galleryTitle:'AEDES-X Video Demonstrations', galleryAutoAdvanceBadge:'AUTO-ADVANCING',
+    galleryPrev:'Previous video', galleryNext:'Next video', galleryPlay:'Play video', galleryPause:'Pause video',
+    galleryMute:'Muted', galleryUnmute:'Unmute'
   }
 };
 
@@ -204,6 +210,9 @@ function applyLanguage(language) {
   });
   if (typeof renderFeedbackCards === 'function') {
     renderFeedbackCards();
+  }
+  if (typeof updateGalleryLanguage === 'function') {
+    updateGalleryLanguage();
   }
 }
 
@@ -1983,6 +1992,390 @@ function initFeedbackModal() {
   }
 }
 
+// =====================================================================
+// SECTION 11 · VIDEO GALLERY CONTROLLER
+// Features:
+// - 1-screen laptop responsive layout
+// - Continuous automatic sequential playback (loops indefinitely)
+// - Clickable thumbnails/tabs, prev/next arrows, counter (1 / 5)
+// - Pause when outside viewport / resume on return
+// - Poster image overlay during video load
+// =====================================================================
+const videoGalleryData = [
+  {
+    id: 'video-1',
+    src: 'assets/videos/video-1.mp4',
+    poster: 'assets/aedes-x-hero.png',
+    titleMs: 'Demonstrasi Prototaip AEDES-X (Bahagian 1)',
+    titleEn: 'AEDES-X Prototype Demonstration (Part 1)',
+    tagMs: 'Video 01 · Demonstrasi',
+    tagEn: 'Video 01 · Demonstration',
+    tabNameMs: 'Demonstrasi 1',
+    tabNameEn: 'Demo 1',
+    descMs: 'Rakaman demonstrasi prototaip fizikal dan pengoperasian sistem AEDES-X.',
+    descEn: 'Recorded demonstration of the physical prototype and AEDES-X operation.'
+  },
+  {
+    id: 'video-2',
+    src: 'assets/videos/video-2.mp4',
+    poster: 'assets/dashboard-utama.png',
+    titleMs: 'Ujian Operasi & Kawalan Sistem (Bahagian 2)',
+    titleEn: 'Operation & System Control Testing (Part 2)',
+    tagMs: 'Video 02 · Ujian Sistem',
+    tagEn: 'Video 02 · System Testing',
+    tabNameMs: 'Ujian Sistem 2',
+    tabNameEn: 'System Test 2',
+    descMs: 'Ujian pensuisan komponen, sensor, dan maklum balas peranti pintar.',
+    descEn: 'Testing of component switching, sensors, and smart device feedback.'
+  },
+  {
+    id: 'video-3',
+    src: 'assets/videos/video-3.mp4',
+    poster: 'assets/cinematic-frames/frame-0001.webp',
+    titleMs: 'Sorotan Inovasi & Hasil Prototaip (Bahagian 3)',
+    titleEn: 'Innovation Highlights & Results (Part 3)',
+    tagMs: 'Video 03 · Sorotan Inovasi',
+    tagEn: 'Video 03 · Innovation',
+    tabNameMs: 'Sorotan 3',
+    tabNameEn: 'Highlights 3',
+    descMs: 'Penerangan menyeluruh rekaan fizikal, aliran udara dan impak komuniti.',
+    descEn: 'Comprehensive overview of physical trap design, airflow, and community impact.'
+  }
+];
+
+let currentGalleryIdx = 0;
+let isGalleryVisible = false;
+let userManuallyPaused = false;
+let galleryVideoEl = null;
+
+function updateGalleryLanguage() {
+  const isMs = currentLanguage === 'ms';
+  const item = videoGalleryData[currentGalleryIdx];
+  if (!item) return;
+
+  const catEl = $('#galleryBadgeCategory');
+  const titleEl = $('#galleryBadgeTitle');
+  if (catEl) catEl.textContent = isMs ? item.tagMs : item.tagEn;
+  if (titleEl) titleEl.textContent = isMs ? item.titleMs : item.titleEn;
+
+  // Update tabs labels
+  const tabItems = $$('.gallery-tab-item');
+  tabItems.forEach((tab, idx) => {
+    const v = videoGalleryData[idx];
+    if (!v) return;
+    const tagEl = tab.querySelector('.tab-tag');
+    const nameEl = tab.querySelector('.tab-name');
+    if (tagEl) tagEl.textContent = isMs ? v.tagMs.split('·')[0].trim() : v.tagEn.split('·')[0].trim();
+    if (nameEl) nameEl.textContent = isMs ? v.tabNameMs : v.tabNameEn;
+  });
+
+  // Sound label
+  const soundLabel = $('#gallerySoundLabel');
+  if (soundLabel && galleryVideoEl) {
+    soundLabel.textContent = galleryVideoEl.muted 
+      ? (isMs ? 'Bisu' : 'Muted') 
+      : (isMs ? 'Bunyi Aktif' : 'Sound ON');
+  }
+}
+
+function initVideoGallery() {
+  galleryVideoEl = $('#galleryVideoPlayer');
+  const sourceEl = $('#galleryVideoSource');
+  const stageEl = $('#galleryStage');
+  const tabsWrap = $('#galleryTabsWrap');
+  const posterOverlay = $('#galleryPosterOverlay');
+  const posterImg = $('#galleryPosterImg');
+  const counterCurr = $('#galleryCounterCurr');
+  const counterTot = $('#galleryCounterTot');
+  const prevBtn = $('#galleryPrevBtn');
+  const nextBtn = $('#galleryNextBtn');
+  const stagePrev = $('#galleryStagePrev');
+  const stageNext = $('#galleryStageNext');
+  const playToggle = $('#galleryPlayToggle');
+  const progressTrack = $('#galleryProgressTrack');
+  const progressFill = $('#galleryProgressFill');
+  const timeCode = $('#galleryTimeCode');
+  const soundBtn = $('#gallerySoundBtn');
+  const soundLabel = $('#gallerySoundLabel');
+
+  if (!galleryVideoEl || !tabsWrap) return;
+
+  const totalVideos = videoGalleryData.length;
+  if (counterTot) counterTot.textContent = String(totalVideos).padStart(2, '0');
+
+  // Format seconds to m:ss
+  function formatTime(sec) {
+    if (isNaN(sec) || sec < 0) return '0:00';
+    const m = Math.floor(sec / 60);
+    const s = Math.floor(sec % 60);
+    return `${m}:${s < 10 ? '0' : ''}${s}`;
+  }
+
+  // Render thumbnail tabs
+  tabsWrap.innerHTML = videoGalleryData.map((vid, idx) => {
+    const num = String(idx + 1).padStart(2, '0');
+    const isMs = currentLanguage === 'ms';
+    const tag = isMs ? vid.tagMs.split('·')[0].trim() : vid.tagEn.split('·')[0].trim();
+    const name = isMs ? vid.tabNameMs : vid.tabNameEn;
+    return `
+      <button class="gallery-tab-item ${idx === 0 ? 'active' : ''}" type="button" role="tab" aria-selected="${idx === 0 ? 'true' : 'false'}" data-index="${idx}" aria-label="Video ${num}: ${name}">
+        <div class="tab-thumb-box">
+          <img src="${vid.poster}" alt="" loading="lazy">
+          <span class="tab-play-indicator" aria-hidden="true">▶</span>
+          <span class="tab-num">${num}</span>
+        </div>
+        <div class="tab-info">
+          <span class="tab-tag">${tag}</span>
+          <strong class="tab-name">${name}</strong>
+        </div>
+        <span class="tab-active-glow" aria-hidden="true"></span>
+      </button>
+    `;
+  }).join('');
+
+  const tabButtons = $$('.gallery-tab-item', tabsWrap);
+
+  function updatePlayIcon(isPlaying) {
+    if (!playToggle) return;
+    const playIcon = playToggle.querySelector('.play-icon');
+    const pauseIcon = playToggle.querySelector('.pause-icon');
+    if (playIcon && pauseIcon) {
+      playIcon.style.display = isPlaying ? 'none' : 'block';
+      pauseIcon.style.display = isPlaying ? 'block' : 'none';
+      playToggle.setAttribute('aria-label', isPlaying ? 'Jeda video' : 'Mainkan video');
+      playToggle.setAttribute('title', isPlaying ? 'Jeda' : 'Mainkan');
+    }
+  }
+
+  function setVideo(index, playImmediate = true) {
+    currentGalleryIdx = ((index % totalVideos) + totalVideos) % totalVideos;
+    const item = videoGalleryData[currentGalleryIdx];
+    if (!item) return;
+
+    // Counter
+    if (counterCurr) counterCurr.textContent = String(currentGalleryIdx + 1).padStart(2, '0');
+
+    // Tab active states
+    tabButtons.forEach((tab, i) => {
+      const isActive = i === currentGalleryIdx;
+      tab.classList.toggle('active', isActive);
+      tab.setAttribute('aria-selected', String(isActive));
+      if (isActive && window.innerWidth < 1024) {
+        tab.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+      }
+    });
+
+    // Update text badges
+    updateGalleryLanguage();
+
+    // Show poster overlay during transition
+    if (posterOverlay) {
+      if (posterImg) posterImg.src = item.poster;
+      posterOverlay.classList.add('visible');
+    }
+
+    // Set video poster
+    galleryVideoEl.poster = item.poster;
+
+    // Load new video source
+    if (sourceEl) {
+      sourceEl.src = item.src;
+    } else {
+      galleryVideoEl.src = item.src;
+    }
+    galleryVideoEl.load();
+    galleryVideoEl.currentTime = 0;
+
+    // Reset progress
+    if (progressFill) progressFill.style.width = '0%';
+    if (timeCode) timeCode.textContent = '0:00 / 0:00';
+
+    if (playImmediate && isGalleryVisible) {
+      galleryVideoEl.play().catch(() => {
+        galleryVideoEl.muted = true;
+        galleryVideoEl.play().catch(() => {});
+      });
+    }
+  }
+
+  // Next / Prev actions
+  function nextVideo() {
+    userManuallyPaused = false;
+    setVideo(currentGalleryIdx + 1, true);
+  }
+
+  function prevVideo() {
+    userManuallyPaused = false;
+    setVideo(currentGalleryIdx - 1, true);
+  }
+
+  // Tab click listener
+  tabButtons.forEach((tab) => {
+    tab.addEventListener('click', () => {
+      const idx = parseInt(tab.dataset.index, 10);
+      userManuallyPaused = false;
+      setVideo(idx, true);
+    });
+  });
+
+  // Buttons navigation
+  if (prevBtn) prevBtn.addEventListener('click', prevVideo);
+  if (nextBtn) nextBtn.addEventListener('click', nextVideo);
+  if (stagePrev) stagePrev.addEventListener('click', prevVideo);
+  if (stageNext) stageNext.addEventListener('click', nextVideo);
+
+  // Play / Pause toggle
+  if (playToggle) {
+    playToggle.addEventListener('click', () => {
+      if (galleryVideoEl.paused) {
+        userManuallyPaused = false;
+        galleryVideoEl.play().catch(() => {});
+      } else {
+        userManuallyPaused = true;
+        galleryVideoEl.pause();
+      }
+    });
+  }
+
+  // Click on stage/video toggles play/pause
+  if (galleryVideoEl) {
+    galleryVideoEl.addEventListener('click', () => {
+      if (galleryVideoEl.paused) {
+        userManuallyPaused = false;
+        galleryVideoEl.play().catch(() => {});
+      } else {
+        userManuallyPaused = true;
+        galleryVideoEl.pause();
+      }
+    });
+  }
+
+  // Sound toggle (Mute / Unmute)
+  if (soundBtn) {
+    soundBtn.addEventListener('click', () => {
+      galleryVideoEl.muted = !galleryVideoEl.muted;
+      const isMuted = galleryVideoEl.muted;
+      soundBtn.classList.toggle('is-unmuted', !isMuted);
+      const iconMuted = soundBtn.querySelector('.sound-icon-muted');
+      const iconActive = soundBtn.querySelector('.sound-icon-active');
+      if (iconMuted && iconActive) {
+        iconMuted.style.display = isMuted ? 'block' : 'none';
+        iconActive.style.display = isMuted ? 'none' : 'block';
+      }
+      if (soundLabel) {
+        soundLabel.textContent = isMuted 
+          ? (currentLanguage === 'ms' ? 'Bisu' : 'Muted') 
+          : (currentLanguage === 'ms' ? 'Bunyi Aktif' : 'Sound ON');
+      }
+    });
+  }
+
+  // Progress scrubbing
+  if (progressTrack) {
+    const handleScrub = (e) => {
+      const rect = progressTrack.getBoundingClientRect();
+      const pos = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
+      if (galleryVideoEl.duration) {
+        galleryVideoEl.currentTime = pos * galleryVideoEl.duration;
+      }
+    };
+
+    progressTrack.addEventListener('click', handleScrub);
+  }
+
+  // Video playback events
+  galleryVideoEl.addEventListener('playing', () => {
+    updatePlayIcon(true);
+    if (posterOverlay) posterOverlay.classList.remove('visible');
+  });
+
+  galleryVideoEl.addEventListener('canplay', () => {
+    if (posterOverlay && !galleryVideoEl.paused) {
+      posterOverlay.classList.remove('visible');
+    }
+  });
+
+  galleryVideoEl.addEventListener('pause', () => {
+    updatePlayIcon(false);
+  });
+
+  galleryVideoEl.addEventListener('timeupdate', () => {
+    const current = galleryVideoEl.currentTime || 0;
+    const dur = galleryVideoEl.duration || 0;
+    if (dur > 0 && progressFill) {
+      progressFill.style.width = `${(current / dur) * 100}%`;
+    }
+    if (timeCode) {
+      timeCode.textContent = `${formatTime(current)} / ${formatTime(dur)}`;
+    }
+  });
+
+  // Automatic sequence looping: when video ends, automatically play next
+  galleryVideoEl.addEventListener('ended', () => {
+    nextVideo();
+  });
+
+  // IntersectionObserver to pause when outside viewport and resume when returning
+  const gallerySection = $('#gallery');
+  if (gallerySection && 'IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        isGalleryVisible = entry.isIntersecting && entry.intersectionRatio >= 0.25;
+        if (isGalleryVisible) {
+          if (!userManuallyPaused && galleryVideoEl.paused) {
+            galleryVideoEl.play().catch(() => {});
+          }
+        } else {
+          if (!galleryVideoEl.paused) {
+            galleryVideoEl.pause();
+          }
+        }
+      });
+    }, { threshold: [0, 0.25, 0.6] });
+
+    observer.observe(gallerySection);
+  } else {
+    isGalleryVisible = true;
+  }
+
+  // Page visibility change
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+      if (galleryVideoEl && !galleryVideoEl.paused) {
+        galleryVideoEl.pause();
+      }
+    } else if (isGalleryVisible && !userManuallyPaused && galleryVideoEl && galleryVideoEl.paused) {
+      galleryVideoEl.play().catch(() => {});
+    }
+  });
+
+  // Keyboard navigation within the gallery stage
+  if (stageEl) {
+    stageEl.setAttribute('tabindex', '0');
+    stageEl.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        nextVideo();
+      } else if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        prevVideo();
+      } else if (e.key === ' ' || e.key === 'k') {
+        e.preventDefault();
+        if (galleryVideoEl.paused) {
+          userManuallyPaused = false;
+          galleryVideoEl.play().catch(() => {});
+        } else {
+          userManuallyPaused = true;
+          galleryVideoEl.pause();
+        }
+      }
+    });
+  }
+
+  // Initial load
+  setVideo(0, false);
+}
+
 // Initialise Section 02 Story Carousel
 initReasonStory();
 
@@ -1990,6 +2383,10 @@ initReasonStory();
 initMascotFab();
 initFeedbackSection();
 
+// Initialise Video Gallery Showcase
+initVideoGallery();
+
 // Initialise language and state
 applyLanguage(currentLanguage);
+
 

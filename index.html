@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=2.2">
+  <link rel="stylesheet" href="styles.css?v=2.3">
 </head>
 <body class="notranslate">
   <div class="cursor-glow" aria-hidden="true"></div>
@@ -29,6 +29,7 @@
       <a href="#dashboard" data-copy="navDashboard">Papan Pemuka</a>
       <a href="#compare" data-copy="navCompare">Keistimewaan</a>
       <a href="#validation" data-copy="navValidation">Ujian</a>
+      <a href="#gallery" data-copy="navGallery">Galeri Video</a>
     </nav>
     <div class="header-actions">
       <span class="national-tag" data-copy="nationalTag">PERINGKAT KEBANGSAAN · 2026</span>
@@ -61,6 +62,7 @@
         <a href="#dashboard" class="mobile-nav-link" data-copy="navDashboard">Papan Pemuka</a>
         <a href="#compare" class="mobile-nav-link" data-copy="navCompare">Keistimewaan</a>
         <a href="#validation" class="mobile-nav-link" data-copy="navValidation">Ujian</a>
+        <a href="#gallery" class="mobile-nav-link" data-copy="navGallery">Galeri Video</a>
       </nav>
       <div class="mobile-nav-footer">
         <span class="national-tag" data-copy="nationalTag">PERINGKAT KEBANGSAAN · 2026</span>
@@ -1154,7 +1156,126 @@
       </div>
     </section>
 
-    <!-- SECTION 11 · HALAMAN PENUTUP (FINALE SHOWCASE) -->
+    <!-- SECTION 11 · GALERI VIDEO (VIDEO GALLERY SHOWCASE) -->
+    <section class="video-gallery-section" id="gallery" aria-label="Galeri Video Demonstrasi AEDES-X">
+      <div class="gallery-inner">
+        <!-- Compact Top Bar for 1-Screen Laptop View -->
+        <div class="gallery-top-bar reveal">
+          <div class="gallery-title-group">
+            <div class="gallery-kicker-row">
+              <span class="gallery-kicker-dot" aria-hidden="true"></span>
+              <p class="kicker" data-copy="galleryKicker">10 / GALERI VIDEO</p>
+              <span class="gallery-live-badge" data-copy="galleryAutoAdvanceBadge">PUTARAN AUTOMATIK</span>
+            </div>
+            <h2 class="gallery-main-title" data-copy="galleryTitle">Demonstrasi Video AEDES-X</h2>
+          </div>
+
+          <div class="gallery-controls-top">
+            <div class="gallery-counter-pill" aria-live="polite" aria-label="Nombor video semasa daripada jumlah keseluruhan">
+              <span class="gallery-counter-curr" id="galleryCounterCurr">01</span>
+              <span class="gallery-counter-div">/</span>
+              <span class="gallery-counter-tot" id="galleryCounterTot">03</span>
+            </div>
+
+            <div class="gallery-nav-buttons">
+              <button class="gallery-btn-nav" id="galleryPrevBtn" type="button" aria-label="Video sebelumnya" title="Sebelumnya" data-copy-aria="galleryPrev">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M15 18l-6-6 6-6"/>
+                </svg>
+              </button>
+              <button class="gallery-btn-nav" id="galleryNextBtn" type="button" aria-label="Video seterusnya" title="Seterusnya" data-copy-aria="galleryNext">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M9 18l6-6-6-6"/>
+                </svg>
+              </button>
+            </div>
+
+            <button class="gallery-sound-btn" id="gallerySoundBtn" type="button" aria-label="Buka bunyi video" title="Buka bunyi" data-copy-aria="galleryUnmute">
+              <svg class="sound-icon-muted" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+                <line x1="23" y1="9" x2="17" y2="15"/>
+                <line x1="17" y1="9" x2="23" y2="15"/>
+              </svg>
+              <svg class="sound-icon-active" style="display:none;" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+                <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
+                <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
+              </svg>
+              <span class="sound-label" id="gallerySoundLabel" data-copy="galleryMute">Bisu</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Main Video Stage (One large video at a time against clean dark background, object-fit contain) -->
+        <div class="gallery-stage reveal" id="galleryStage">
+          <!-- Dark clean theater canvas with native responsive video -->
+          <video 
+            id="galleryVideoPlayer"
+            class="gallery-video"
+            autoplay
+            muted
+            playsinline
+            preload="auto"
+            poster="assets/aedes-x-hero.png"
+            aria-label="Pemain video demonstrasi prototaip AEDES-X"
+          >
+            <source id="galleryVideoSource" src="assets/videos/video-1.mp4" type="video/mp4">
+            Pelayar anda tidak menyokong tag video HTML5.
+          </video>
+
+          <!-- Poster & Loader Overlay (Visible while switching / loading) -->
+          <div class="gallery-poster-overlay" id="galleryPosterOverlay" aria-hidden="true">
+            <img id="galleryPosterImg" src="assets/aedes-x-hero.png" alt="Pratonton video">
+            <div class="gallery-loader-spinner">
+              <span class="spinner-ring"></span>
+            </div>
+          </div>
+
+          <!-- Floating Video Info Tag (Top-left of the video frame) -->
+          <div class="gallery-video-badge" id="galleryVideoBadge">
+            <span class="badge-cat" id="galleryBadgeCategory">Video 01 · Demonstrasi</span>
+            <span class="badge-divider" aria-hidden="true">·</span>
+            <span class="badge-title" id="galleryBadgeTitle">Demonstrasi Prototaip AEDES-X (Bahagian 1)</span>
+          </div>
+
+          <!-- Hover Floating Side Arrows -->
+          <button class="gallery-stage-arrow prev" id="galleryStagePrev" type="button" aria-label="Video sebelumnya" title="Sebelumnya" data-copy-aria="galleryPrev">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M15 18l-6-6 6-6"/>
+            </svg>
+          </button>
+          <button class="gallery-stage-arrow next" id="galleryStageNext" type="button" aria-label="Video seterusnya" title="Seterusnya" data-copy-aria="galleryNext">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M9 18l6-6-6-6"/>
+            </svg>
+          </button>
+
+          <!-- Floating Bottom Controls Bar: Play/Pause, Progress Track and Time Indicator -->
+          <div class="gallery-stage-footer">
+            <button class="gallery-play-toggle" id="galleryPlayToggle" type="button" aria-label="Jeda video" title="Jeda video" data-copy-aria="galleryPause">
+              <svg class="play-icon" style="display:none;" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <polygon points="5 3 19 12 5 21 5 3"/>
+              </svg>
+              <svg class="pause-icon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <rect x="6" y="4" width="4" height="16"/>
+                <rect x="14" y="4" width="4" height="16"/>
+              </svg>
+            </button>
+            <div class="gallery-progress-track" id="galleryProgressTrack" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" tabindex="0" aria-label="Masa video">
+              <div class="gallery-progress-fill" id="galleryProgressFill"></div>
+            </div>
+            <span class="gallery-time-code" id="galleryTimeCode">0:00 / 0:30</span>
+          </div>
+        </div>
+
+        <!-- Bottom Strip: Clickable Thumbnails / Tabs for Quick Selection -->
+        <div class="gallery-tabs-wrap reveal" id="galleryTabsWrap" role="tablist" aria-label="Pilihan video demonstrasi">
+          <!-- Dynamically populated or rendered -->
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 12 · HALAMAN PENUTUP (FINALE SHOWCASE) -->
     <section class="finale section" id="finale" aria-label="Penutup AEDES-X">
       <div class="finale-bg" aria-hidden="true"></div>
       <div class="finale-container">
@@ -1313,6 +1434,6 @@
   <!-- Supabase CDN Client & Project Configuration -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="supabase-config.js?v=2.2"></script>
-  <script src="app.js?v=2.2"></script>
+  <script src="app.js?v=2.3"></script>
 </body>
 </html>
